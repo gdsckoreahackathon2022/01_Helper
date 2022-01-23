@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.util.constant
+package team.gdsc.shelper.util.constant
 
 object IntentConstant {
     const val Error = "intent-error"

@@ -18,8 +18,8 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
 import team.gdsc.shelper.activity.error.ErrorActivity
-import team.gdsc.shelper.activity.util.NetworkUtil
-import team.gdsc.shelper.activity.util.constant.IntentConstant
+import team.gdsc.shelper.util.NetworkUtil
+import team.gdsc.shelper.util.constant.IntentConstant
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

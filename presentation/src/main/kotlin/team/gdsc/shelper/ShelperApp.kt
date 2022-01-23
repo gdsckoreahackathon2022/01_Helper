@@ -16,7 +16,7 @@ import io.github.jisungbin.erratum.Erratum
 import io.github.jisungbin.erratum.ErratumExceptionActivity
 import io.github.jisungbin.logeukes.Logeukes
 import team.gdsc.shelper.activity.error.ErrorActivity
-import team.gdsc.shelper.activity.util.constant.IntentConstant
+import team.gdsc.shelper.util.constant.IntentConstant
 
 @HiltAndroidApp
 class ShelperApp : Application() {

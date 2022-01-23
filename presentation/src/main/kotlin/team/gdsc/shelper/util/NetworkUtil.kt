@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.util
+package team.gdsc.shelper.util
 
 import android.content.Context
 import android.net.ConnectivityManager
