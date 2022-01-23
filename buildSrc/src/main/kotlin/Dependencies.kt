@@ -52,8 +52,9 @@ object Versions {
     }
 
     object Location {
-        const val Gms = "19.0.1"
         const val Locus = "4.0.1"
+        const val GmsMap = "18.0.1"
+        const val GmsLocation = "19.0.1"
     }
 
     object Jetpack {
@@ -109,7 +110,8 @@ object Dependencies {
 
     val Location = listOf(
         "com.github.BirjuVachhani:locus-android:${Versions.Location.Locus}",
-        "com.google.android.gms:play-services-location:${Versions.Location.Gms}"
+        "com.google.android.gms:play-services-maps:${Versions.Location.GmsMap}",
+        "com.google.android.gms:play-services-location:${Versions.Location.GmsLocation}"
     )
 
     val Debug = listOf(

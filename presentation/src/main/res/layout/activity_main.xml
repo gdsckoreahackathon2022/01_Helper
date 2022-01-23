@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Shelper © 2022 Team Helper. all rights reserved.
+  ~ Shelper license is under the MIT.
+  ~
+  ~ [activity_main.xml] created by Ji Sungbin on 22. 1. 23. 오후 10:18
+  ~
+  ~ Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cll_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

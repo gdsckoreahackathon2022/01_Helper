@@ -5,6 +5,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("com.google.android.gms.oss-licenses-plugin")
     id("name.remal.check-dependency-updates") version Versions.Util.CheckDependencyUpdates
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -55,6 +56,7 @@ dependencies {
     implementation(projects.data)
     implementation(projects.domain)
     implementation(Dependencies.Hilt)
+    implementation(Dependencies.Orbit)
 
     Dependencies.Ui.forEach(::implementation)
     Dependencies.Ktx.forEach(::implementation)
