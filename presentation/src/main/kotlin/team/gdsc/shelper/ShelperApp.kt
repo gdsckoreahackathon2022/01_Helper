@@ -23,7 +23,7 @@ class ShelperApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Erratum.setup(
+        /*Erratum.setup(
             application = this,
             registerExceptionActivityIntent = { _, throwable, lastActivity ->
                 Intent(lastActivity, ErrorActivity::class.java).apply {
@@ -35,7 +35,7 @@ class ShelperApp : Application() {
                     putExtra(IntentConstant.Error, IntentConstant.Exception)
                 }
             }
-        )
+        )*/
         if (BuildConfig.DEBUG) {
             Logeukes.setup()
         }

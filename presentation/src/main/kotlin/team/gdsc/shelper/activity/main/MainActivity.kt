@@ -10,6 +10,7 @@
 package team.gdsc.shelper.activity.main
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.animation.AnticipateInterpolator
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
+import land.sungbin.systemuicontroller.SystemUiController
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.util.NetworkUtil
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
         if (!NetworkUtil.isNetworkAvailable(applicationContext)) {
             finish()
@@ -48,6 +51,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        SystemUiController(window).setSystemBarsColor(Color.TRANSPARENT)
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
