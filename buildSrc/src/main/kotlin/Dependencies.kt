@@ -32,7 +32,7 @@ object Versions {
     object Ui {
         const val Glide = "4.12.0"
         const val Lottie = "4.2.2"
-        const val Material = "1.5.0"
+        const val Material = "1.6.0-alpha02"
         const val AppCompat = "1.4.1"
         const val Splash = "1.0.0-beta01"
     }
