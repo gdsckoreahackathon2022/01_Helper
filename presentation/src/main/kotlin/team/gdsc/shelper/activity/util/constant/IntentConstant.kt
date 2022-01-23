@@ -1,13 +1,13 @@
 /*
- * carrot-android © 2022 Ji Sungbin. all rights reserved.
- * carrot-android license is under the MIT.
+ * Shelper © 2022 Team Helper. all rights reserved.
+ * Shelper license is under the MIT.
  *
- * [IntentConstant.kt] created by Ji Sungbin on 22. 1. 23. 오후 2:54
+ * [IntentConstant.kt] created by Ji Sungbin on 22. 1. 23. 오후 8:56
  *
- * Please see: https://github.com/carrot-style/carrot-android/blob/main/LICENSE.
+ * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package style.carrot.android.util.constant
+package team.gdsc.shelper.activity.util.constant
 
 object IntentConstant {
     const val Error = "intent-error"

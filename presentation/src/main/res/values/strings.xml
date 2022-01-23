@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CarrotStyle</string>
+    <string name="app_name">Shelper</string>
 
     <string name="activity_error_oops">Oops!</string>
     <string name="activity_error_internet">Can\'t styling because the internet is unstable 😢</string>

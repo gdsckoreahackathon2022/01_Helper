@@ -9,16 +9,16 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.CarrotStyle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Shelper" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
         <item name="android:navigationBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="Theme.CarrotStyle.Splash" parent="Theme.SplashScreen">
+    <style name="Theme.Shelper.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
-        <item name="postSplashScreenTheme">@style/Theme.CarrotStyle</item>
+        <item name="postSplashScreenTheme">@style/Theme.Shelper</item>
 
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:navigationBarColor">@color/white</item>

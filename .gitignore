@@ -9,4 +9,4 @@ local.properties
 /domain/build
 /presentation/build
 /presentation/release
-/presentation/src/main/kotlin/style/carrot/android/secret/
+/data/src/main/kotlin/team/gdsc/shelper/data/secret/

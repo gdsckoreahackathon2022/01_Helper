@@ -1,5 +1,15 @@
+/*
+ * Shelper © 2022 Team Helper. all rights reserved.
+ * Shelper license is under the MIT.
+ *
+ * [MainActivity.kt] created by Ji Sungbin on 22. 1. 23. 오후 8:58
+ *
+ * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+ */
+
 package team.gdsc.shelper.activity.main
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.animation.AnticipateInterpolator
@@ -7,6 +17,9 @@ import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
+import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.activity.util.NetworkUtil
+import team.gdsc.shelper.activity.util.constant.IntentConstant
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -15,7 +28,7 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        /*if (!NetworkUtil.isNetworkAvailable(applicationContext)) {
+        if (!NetworkUtil.isNetworkAvailable(applicationContext)) {
             finish()
             startActivity(
                 Intent(this, ErrorActivity::class.java).apply {
@@ -23,7 +36,7 @@ class MainActivity : ComponentActivity() {
                 }
             )
             return
-        }*/
+        }
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
