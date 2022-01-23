@@ -47,17 +47,19 @@ android {
 }
 
 dependencies {
-    val kapts = listOf(Dependencies.Compiler.Hilt)
+    val kapts = listOf(
+        Dependencies.Compiler.Hilt,
+        Dependencies.Compiler.Glide
+    )
 
     implementation(projects.data)
     implementation(projects.domain)
     implementation(Dependencies.Hilt)
-    implementation(Dependencies.Orbit)
 
     Dependencies.Ui.forEach(::implementation)
+    Dependencies.Ktx.forEach(::implementation)
     Dependencies.Util.forEach(::implementation)
-    Dependencies.Jackson.forEach(::implementation)
-    Dependencies.Retrofit.forEach(::implementation)
+    Dependencies.Location.forEach(::implementation)
     Dependencies.Essential.forEach(::implementation)
 
     Dependencies.Debug.forEach(::debugImplementation)

@@ -16,15 +16,24 @@ object Versions {
     const val Orbit = "4.3.0"
 
     object Essential {
-        const val Ktx = "1.7.0"
         const val Kotlin = "1.6.10"
         const val Coroutines = "1.6.0"
         const val Gradle = "7.1.0-rc01"
         const val GoogleService = "4.3.3"
     }
 
+    object Ktx {
+        const val Core = "1.7.0"
+        const val Fragment = "1.4.0"
+        const val LifeCycle = "2.4.0"
+        const val ViewModel = "2.4.0"
+    }
+
     object Ui {
+        const val Glide = "4.12.0"
+        const val Lottie = "4.2.2"
         const val Material = "1.5.0"
+        const val AppCompat = "1.4.1"
         const val Splash = "1.0.0-beta01"
     }
 
@@ -36,10 +45,15 @@ object Versions {
     object Util {
         const val Erratum = "1.0.1"
         const val Logeukes = "1.0.1"
-        const val Jackson = "2.13.1"
         const val LeakCanary = "2.8.1"
-        const val FirebaseBom = "29.0.3"
+        const val SystemUiController = "1.0.0"
+        const val SecretsGradlePlugin = "2.0.0"
         const val CheckDependencyUpdates = "1.5.0"
+    }
+
+    object Location {
+        const val Gms = "19.0.1"
+        const val Locus = "4.0.1"
     }
 
     object Jetpack {
@@ -55,30 +69,30 @@ object Versions {
 object Dependencies {
     const val Orbit = "org.orbit-mvi:orbit-viewmodel:${Versions.Orbit}"
     const val Hilt = "com.google.dagger:hilt-android:${Versions.Jetpack.Hilt}"
-    const val FirebaseBom = "com.google.firebase:firebase-bom:${Versions.Util.FirebaseBom}"
 
     object Compiler {
+        const val Glide = "com.github.bumptech.glide:compiler:${Versions.Ui.Glide}"
         const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
     }
 
-    val Firebase = listOf("com.google.firebase:firebase-firestore-ktx")
-
     val Essential = listOf(
-        "androidx.core:core-ktx:${Versions.Essential.Ktx}",
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Essential.Coroutines}"
     )
 
+    val Ktx = listOf(
+        "androidx.core:core-ktx:${Versions.Ktx.Core}",
+        "androidx.fragment:fragment-ktx:${Versions.Ktx.Fragment}",
+        "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Ktx.LifeCycle}",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Ktx.ViewModel}",
+    )
+
     val Ui = listOf(
+        "com.airbnb.android:lottie:${Versions.Ui.Lottie}",
+        "com.github.bumptech.glide:glide:${Versions.Ui.Glide}",
+        "androidx.appcompat:appcompat:${Versions.Ui.AppCompat}",
         "androidx.core:core-splashscreen:${Versions.Ui.Splash}",
         "com.google.android.material:material:${Versions.Ui.Material}",
         "com.google.android.gms:play-services-oss-licenses:${Versions.OssLicense.Master}"
-    )
-
-    val Jackson = listOf(
-        "com.fasterxml.jackson.core:jackson-core:${Versions.Util.Jackson}",
-        "com.fasterxml.jackson.core:jackson-databind:${Versions.Util.Jackson}",
-        "com.fasterxml.jackson.core:jackson-annotations:${Versions.Util.Jackson}",
-        "com.fasterxml.jackson.module:jackson-module-kotlin:${Versions.Util.Jackson}"
     )
 
     val Retrofit = listOf(
@@ -90,6 +104,12 @@ object Dependencies {
     val Util = listOf(
         "io.github.jisungbin:erratum:${Versions.Util.Erratum}",
         "io.github.jisungbin:logeukes:${Versions.Util.Logeukes}",
+        "land.sungbin:systemuicontroller:${Versions.Util.SystemUiController}"
+    )
+
+    val Location = listOf(
+        "com.github.BirjuVachhani:locus-android:${Versions.Location.Locus}",
+        "com.google.android.gms:play-services-location:${Versions.Location.Gms}"
     )
 
     val Debug = listOf(
