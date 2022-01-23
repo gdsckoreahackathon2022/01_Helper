@@ -14,6 +14,7 @@ import android.content.Intent
 import dagger.hilt.android.HiltAndroidApp
 import io.github.jisungbin.erratum.Erratum
 import io.github.jisungbin.erratum.ErratumExceptionActivity
+import io.github.jisungbin.logeukes.Logeukes
 import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.activity.util.constant.IntentConstant
 
@@ -35,8 +36,8 @@ class ShelperApp : Application() {
                 }
             }
         )
-        /*if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             Logeukes.setup()
-        }*/
+        }
     }
 }
