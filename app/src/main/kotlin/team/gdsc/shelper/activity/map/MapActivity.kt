@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.main
+package team.gdsc.shelper.activity.map
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -32,9 +32,10 @@ import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
 import team.gdsc.shelper.util.extension.runIf
+import team.gdsc.shelper.util.extension.toast
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var initLocateService = false
     private lateinit var map: GoogleMap
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
+        toast(getString(R.string.activity_map_loading_locate))
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
