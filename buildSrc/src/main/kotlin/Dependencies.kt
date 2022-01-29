@@ -22,7 +22,7 @@ object Versions {
 
     object Ktx {
         const val Core = "1.7.0"
-        const val Fragment = "1.4.0"
+        const val Fragment = "1.4.1"
         const val LifeCycle = "2.4.0"
         const val ViewModel = "2.4.0"
     }
@@ -50,7 +50,7 @@ object Versions {
 
     object Location {
         const val Locus = "4.0.1"
-        const val GmsMap = "18.0.1"
+        const val GmsMap = "18.0.2"
         const val GmsLocation = "19.0.1"
     }
 
