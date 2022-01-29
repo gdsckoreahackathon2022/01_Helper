@@ -84,12 +84,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun startLocationService() {
         Locus.startLocationUpdates(this) { result ->
             result.location?.let { location ->
-                /*val (latitude, longitude) = listOf(location.latitude, location.longitude)
-                marking(latitude, longitude)*/
+                val (latitude, longitude) = listOf(location.latitude, location.longitude)
+                val locate = LatLng(latitude, longitude)
+                // marking(latitude, longitude)
                 if (!initLocateService) {
                     initLocateService = true
                     map.isMyLocationEnabled = true
                     map.uiSettings.isMyLocationButtonEnabled = true
+                    moveCamera(locate)
                 }
             }
             result.error?.let { exception ->
@@ -98,21 +100,25 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun marking(latitude: Double, longitude: Double, title: String = "") {
+    private fun marking(locate: LatLng, title: String = "") {
         if (::map.isInitialized) {
-            val locate = LatLng(latitude, longitude)
             map.addMarker(
                 MarkerOptions()
                     .position(locate)
                     .runIf(title != "") { title(title) }
             )
+        }
+    }
+
+    private fun moveCamera(locate: LatLng) {
+        if (::map.isInitialized) {
             map.moveCamera(CameraUpdateFactory.newLatLng(locate))
         }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map.setPadding(30, 30, 30, 100)
+        map.setPadding(30, 100, 30, 100)
         map.uiSettings.run {
             isZoomControlsEnabled = true
             setAllGesturesEnabled(true)
