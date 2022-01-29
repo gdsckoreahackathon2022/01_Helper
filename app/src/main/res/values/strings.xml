@@ -21,6 +21,7 @@
 
     <string name="activity_error_title">일시적인 오류입니다</string>
     <string name="activity_error_btn_retry">새로고침</string>
+
     <string name="map_navigation_flood_damage">수재/태풍</string>
     <string name="map_navigation_volcano">화산</string>
     <string name="map_navigation_earthquake">지진</string>

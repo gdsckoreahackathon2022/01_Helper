@@ -12,10 +12,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cll_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:theme="@style/Theme.Shelper">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map"
+        android:id="@+id/fcv_map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -23,12 +24,25 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/secondary" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_open_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@null"
+        app:backgroundTint="@color/primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_round_menu_24" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemRippleColor="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_map" />
+        app:menu="@menu/navigation_map"
+        tools:layout_height="70dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

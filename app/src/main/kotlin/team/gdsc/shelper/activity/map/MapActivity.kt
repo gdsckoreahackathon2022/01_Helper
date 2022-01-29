@@ -58,7 +58,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         toast(getString(R.string.activity_map_loading_locate))
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.fcv_map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         startLocationService()
 
@@ -116,7 +116,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map.setPadding(30, 70, 30, 30)
+        map.setPadding(30, 120, 30, 30)
         map.uiSettings.run {
             isZoomControlsEnabled = true
             setAllGesturesEnabled(true)
