@@ -64,6 +64,7 @@ dependencies {
     Dependencies.Ktx.forEach(::implementation)
     Dependencies.Util.forEach(::implementation)
     Dependencies.Location.forEach(::implementation)
+    Dependencies.Retrofit.forEach(::implementation)
 
     Dependencies.Debug.forEach(::debugImplementation)
 

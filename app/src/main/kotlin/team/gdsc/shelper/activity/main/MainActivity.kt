@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun moveCameraAndZoom(locate: LatLng) {
         if (::map.isInitialized) {
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(locate, 10f))
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(locate, 18f))
         }
     }
 
