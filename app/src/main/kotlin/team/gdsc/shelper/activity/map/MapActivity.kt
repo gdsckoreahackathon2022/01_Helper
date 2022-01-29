@@ -116,7 +116,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map.setPadding(30, 100, 30, 100)
+        map.setPadding(30, 70, 30, 30)
         map.uiSettings.run {
             isZoomControlsEnabled = true
             setAllGesturesEnabled(true)

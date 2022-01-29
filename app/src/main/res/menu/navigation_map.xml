@@ -15,16 +15,16 @@
 
     <item
         android:id="@+id/navigation_volcano"
-        android:icon="@drawable/ic_outline_volcano_24"
+        android:icon="@drawable/selector_volcano"
         android:title="@string/map_navigation_volcano" />
 
     <item
         android:id="@+id/navgation_earthquake"
-        android:icon="@drawable/ic_outline_landslide_24"
+        android:icon="@drawable/selector_landslide"
         android:title="@string/map_navigation_earthquake" />
 
     <item
         android:id="@+id/navigation_heat_wave"
-        android:icon="@drawable/ic_outline_brightness_5_24"
+        android:icon="@drawable/selector_brightness"
         android:title="@string/map_navigation_heat_wave" />
 </menu>
