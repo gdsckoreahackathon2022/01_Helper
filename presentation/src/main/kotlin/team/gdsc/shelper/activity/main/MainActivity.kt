@@ -70,19 +70,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
-
-        /*binding.root.viewTreeObserver.addOnPreDrawListener(
-            object : ViewTreeObserver.OnPreDrawListener {
-                override fun onPreDraw(): Boolean {
-                    return if (isReady) {
-                        binding.root.viewTreeObserver.removeOnPreDrawListener(this)
-                        true
-                    } else {
-                        false
-                    }
-                }
-            }
-        )*/
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
