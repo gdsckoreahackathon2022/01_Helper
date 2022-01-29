@@ -1,11 +1,20 @@
+/*
+ * Shelper © 2022 Team Helper. all rights reserved.
+ * Shelper license is under the MIT.
+ *
+ * [build.gradle.kts] created by Ji Sungbin on 22. 1. 29. 오후 9:15
+ *
+ * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+ */
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
     id("com.google.android.gms.oss-licenses-plugin")
-    id("name.remal.check-dependency-updates") version Versions.Util.CheckDependencyUpdates
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("name.remal.check-dependency-updates") version Versions.Util.CheckDependencyUpdates
 }
 
 android {
@@ -48,23 +57,18 @@ android {
 }
 
 dependencies {
-    val kapts = listOf(
-        Dependencies.Compiler.Hilt,
-        Dependencies.Compiler.Glide
-    )
-
     implementation(projects.data)
     implementation(projects.domain)
     implementation(Dependencies.Hilt)
-    implementation(Dependencies.Orbit)
+    implementation(Dependencies.Coroutine)
 
     Dependencies.Ui.forEach(::implementation)
     Dependencies.Ktx.forEach(::implementation)
     Dependencies.Util.forEach(::implementation)
     Dependencies.Location.forEach(::implementation)
-    Dependencies.Essential.forEach(::implementation)
 
     Dependencies.Debug.forEach(::debugImplementation)
 
-    kapts.forEach(::kapt)
+    kapt(Dependencies.Compiler.Hilt)
+    kapt(Dependencies.Compiler.Glide)
 }

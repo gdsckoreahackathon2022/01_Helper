@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Application {
-    const val minSdk = 24
+    const val minSdk = 19
     const val targetSdk = 31
     const val compileSdk = 31
     const val jvmTarget = "11"
@@ -13,12 +13,10 @@ object Application {
 }
 
 object Versions {
-    const val Orbit = "4.3.0"
-
     object Essential {
+        const val Gradle = "7.1.0"
         const val Kotlin = "1.6.10"
         const val Coroutines = "1.6.0"
-        const val Gradle = "7.1.0"
         const val GoogleService = "4.3.3"
     }
 
@@ -32,9 +30,9 @@ object Versions {
     object Ui {
         const val Glide = "4.12.0"
         const val Lottie = "4.2.2"
-        const val Material = "1.6.0-alpha02"
         const val AppCompat = "1.4.1"
         const val Splash = "1.0.0-beta01"
+        const val Material = "1.6.0-alpha02"
     }
 
     object Network {
@@ -44,7 +42,7 @@ object Versions {
 
     object Util {
         const val Erratum = "1.0.1"
-        const val Logeukes = "1.0.1"
+        const val Logeukes = "1.0.0"
         const val LeakCanary = "2.8.1"
         const val SystemUiController = "1.0.0"
         const val SecretsGradlePlugin = "2.0.0"
@@ -68,17 +66,9 @@ object Versions {
 }
 
 object Dependencies {
-    const val Orbit = "org.orbit-mvi:orbit-viewmodel:${Versions.Orbit}"
     const val Hilt = "com.google.dagger:hilt-android:${Versions.Jetpack.Hilt}"
-
-    object Compiler {
-        const val Glide = "com.github.bumptech.glide:compiler:${Versions.Ui.Glide}"
-        const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
-    }
-
-    val Essential = listOf(
+    const val Coroutine =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Essential.Coroutines}"
-    )
 
     val Ktx = listOf(
         "androidx.core:core-ktx:${Versions.Ktx.Core}",
@@ -103,8 +93,8 @@ object Dependencies {
     )
 
     val Util = listOf(
-        "io.github.jisungbin:erratum:${Versions.Util.Erratum}",
-        "io.github.jisungbin:logeukes:${Versions.Util.Logeukes}",
+        "land.sungbin:erratum:${Versions.Util.Erratum}",
+        "land.sungbin:logeukes:${Versions.Util.Logeukes}",
         "land.sungbin:systemuicontroller:${Versions.Util.SystemUiController}"
     )
 
@@ -117,4 +107,9 @@ object Dependencies {
     val Debug = listOf(
         "com.squareup.leakcanary:leakcanary-android:${Versions.Util.LeakCanary}"
     )
+
+    object Compiler {
+        const val Glide = "com.github.bumptech.glide:compiler:${Versions.Ui.Glide}"
+        const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
+    }
 }
