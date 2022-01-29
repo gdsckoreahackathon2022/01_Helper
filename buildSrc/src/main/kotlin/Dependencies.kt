@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Application {
-    const val minSdk = 19
+    const val minSdk = 21
     const val targetSdk = 31
     const val compileSdk = 31
     const val jvmTarget = "11"
@@ -44,7 +44,6 @@ object Versions {
         const val Erratum = "1.0.1"
         const val Logeukes = "1.0.0"
         const val LeakCanary = "2.8.1"
-        const val SystemUiController = "1.0.0"
         const val SecretsGradlePlugin = "2.0.0"
         const val CheckDependencyUpdates = "1.5.0"
     }
@@ -94,8 +93,7 @@ object Dependencies {
 
     val Util = listOf(
         "land.sungbin:erratum:${Versions.Util.Erratum}",
-        "land.sungbin:logeukes:${Versions.Util.Logeukes}",
-        "land.sungbin:systemuicontroller:${Versions.Util.SystemUiController}"
+        "land.sungbin:logeukes:${Versions.Util.Logeukes}"
     )
 
     val Location = listOf(
