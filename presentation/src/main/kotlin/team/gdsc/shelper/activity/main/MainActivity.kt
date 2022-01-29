@@ -10,6 +10,7 @@
 package team.gdsc.shelper.activity.main
 
 // import team.gdsc.shelper.util.systemuicontroller.SystemUiController
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -38,6 +39,7 @@ import team.gdsc.shelper.util.systemuicontroller.setSystemBarsColor
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
+    private var initLocateService = false
     private lateinit var map: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-        // startLocationService()
+        startLocationService()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             splashScreen.setOnExitAnimationListener { splashScreenView ->
@@ -78,11 +80,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private fun startLocationService() {
         Locus.startLocationUpdates(this) { result ->
             result.location?.let { location ->
-                val (latitude, longitude) = listOf(location.latitude, location.longitude)
-                marking(latitude, longitude)
+                /*val (latitude, longitude) = listOf(location.latitude, location.longitude)
+                marking(latitude, longitude)*/
+                if (!initLocateService) {
+                    initLocateService = true
+                    map.isMyLocationEnabled = true
+                    map.uiSettings.isMyLocationButtonEnabled = true
+                }
             }
             result.error?.let { exception ->
                 logeukes(type = LoggerType.E) { exception }
@@ -104,11 +112,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        //  map.setPadding(30, 30, 30, 100)
-        map.isMyLocationEnabled = true
+        map.setPadding(30, 30, 30, 100)
         map.uiSettings.run {
             isZoomControlsEnabled = true
-            isMyLocationButtonEnabled = true
             setAllGesturesEnabled(true)
         }
     }
