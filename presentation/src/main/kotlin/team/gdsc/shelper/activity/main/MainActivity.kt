@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                     initLocateService = true
                     map.isMyLocationEnabled = true
                     map.uiSettings.isMyLocationButtonEnabled = true
-                    moveCamera(locate)
+                    moveCameraAndZoom(locate)
                 }
             }
             result.error?.let { exception ->
@@ -110,9 +110,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun moveCamera(locate: LatLng) {
+    private fun moveCameraAndZoom(locate: LatLng) {
         if (::map.isInitialized) {
-            map.moveCamera(CameraUpdateFactory.newLatLng(locate))
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(locate, 100f))
         }
     }
 
@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onPause() {
-        super.onPause()
         Locus.stopLocationUpdates()
+        super.onPause()
     }
 }
