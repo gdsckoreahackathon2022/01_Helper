@@ -104,7 +104,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map.setPadding(30, 30, 30, 70)
+        //  map.setPadding(30, 30, 30, 100)
+        map.isMyLocationEnabled = true
         map.uiSettings.run {
             isZoomControlsEnabled = true
             isMyLocationButtonEnabled = true
