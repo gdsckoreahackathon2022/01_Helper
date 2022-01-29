@@ -57,8 +57,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.data)
-    implementation(projects.domain)
     implementation(Dependencies.Hilt)
     implementation(Dependencies.Coroutine)
 

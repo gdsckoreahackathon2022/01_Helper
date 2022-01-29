@@ -15,6 +15,8 @@
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="fontFamily">@font/notosans</item>
         <item name="android:fontFamily">@font/notosans</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.Shelper.Splash" parent="Theme.SplashScreen">

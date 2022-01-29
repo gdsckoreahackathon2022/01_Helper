@@ -9,10 +9,8 @@
 
 package team.gdsc.shelper.activity.main
 
-// import team.gdsc.shelper.util.systemuicontroller.SystemUiController
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.animation.AnticipateInterpolator
@@ -34,7 +32,6 @@ import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
 import team.gdsc.shelper.util.extension.runIf
-import team.gdsc.shelper.util.systemuicontroller.setSystemBarsColor
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -57,7 +54,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
-        setSystemBarsColor(Color.TRANSPARENT)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment

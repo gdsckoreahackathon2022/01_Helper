@@ -7,6 +7,5 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "Shelper"
-include(":data", ":domain", ":presentation")
+include(":app")
