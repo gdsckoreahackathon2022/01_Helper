@@ -27,6 +27,7 @@
         android:id="@+id/bnv_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemRippleColor="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navigation_map" />
 
