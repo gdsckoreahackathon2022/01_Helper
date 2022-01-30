@@ -41,7 +41,6 @@
 
     <style name="guide_chip" parent="@style/Widget.Material3.Chip.Filter">
         <item name="chipBackgroundColor">@color/selector_guide_chip</item>
-        <item name="strokeColor">@color/primary</item>
         <item name="android:textAppearance">@style/font_appearance</item>
     </style>
 
