@@ -26,6 +26,7 @@
         </activity>
 
         <activity android:name=".activity.error.ErrorActivity" />
+        <activity android:name=".activity.guide.GuideActivity" />
 
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"

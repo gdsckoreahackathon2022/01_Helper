@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/cl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/Theme.Shelper.Guide">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/abl_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mtb_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:navigationIcon="@drawable/ic_round_arrow_back_24"
+                app:navigationIconTint="@color/primaryDark"
+                app:title="@string/activity_map_drawer_guide"
+                app:titleCentered="true"
+                app:titleTextColor="@color/primaryDark" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="true"
+            android:paddingHorizontal="16dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_flood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="홍수" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_heavy_rain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="홍수" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_tsunami"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="쓰나미" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_typhoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="태풍" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_volcano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화산" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_earthquake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="지진" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_heat_wave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="폭염" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_heavy_snow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="폭설" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</layout>

@@ -19,6 +19,12 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="Theme.Shelper.Guide" parent="Theme.Shelper">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
+        <item name="android:windowBackground">@color/backgroundWhite</item>
+    </style>
+
     <style name="Theme.Shelper.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>

@@ -11,6 +11,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
@@ -19,12 +20,13 @@
         tools:layout_margin="30dp">
 
         <LinearLayout
+            android:id="@+id/ll_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/disaster_image"
+                android:id="@+id/iv_image"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:contentDescription="@null"
@@ -34,7 +36,7 @@
                 tools:src="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/disaster_name"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

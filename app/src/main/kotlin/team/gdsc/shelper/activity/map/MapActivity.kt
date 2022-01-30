@@ -85,9 +85,15 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
+       setOnClickListeners()
+    }
+
+    private fun setOnClickListeners() {
         binding.btnOpenDrawer.setOnClickListener {
             binding.dlContainer.open()
         }
+
+        binding.
     }
 
     @SuppressLint("MissingPermission")
