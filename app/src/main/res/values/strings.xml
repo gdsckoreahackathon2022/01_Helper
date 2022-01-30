@@ -40,4 +40,5 @@
     <string name="activity_guide_chip_earthquake">지진</string>
     <string name="activity_guide_chip_heat_wave">폭염</string>
     <string name="activity_guide_chip_heave_snow">폭설</string>
+    <string name="activity_map_toast_occur_exception">오류가 발생했어요!</string>
 </resources>

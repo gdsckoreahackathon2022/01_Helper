@@ -30,12 +30,15 @@ import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
+import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.activity.map.enum.PlaceType
+import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
-import team.gdsc.shelper.util.extension.runIf
+import team.gdsc.shelper.util.extension.collectWithLifecycle
 import team.gdsc.shelper.util.extension.toast
 
 @AndroidEntryPoint
@@ -68,7 +71,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment =
             supportFragmentManager.findFragmentById(R.id.fcv_map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-        startLocationService()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             splashScreen.setOnExitAnimationListener { splashScreenView ->
@@ -85,12 +87,30 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
-        setOnClickListeners()
+        setViweListeners()
+        startLocationService()
+        vm.locateFlow.collectWithLifecycle(this, ::handleLocate)
+        vm.exceptionFlow.collectWithLifecycle(this, ::handleException)
     }
 
-    private fun setOnClickListeners() {
+    private fun setViweListeners() {
         binding.btnOpenDrawer.setOnClickListener {
             binding.dlContainer.open()
+        }
+
+        binding.bnvNavigation.setOnItemSelectedListener { menu ->
+            if (::map.isInitialized) {
+                val placeType = when (menu.itemId) {
+                    R.id.navigatin_flood_damage -> PlaceType.FLOOD_DAMAGE
+                    R.id.navigation_volcano -> PlaceType.VOLCANO
+                    R.id.navgation_earthquake -> PlaceType.EARTHQUAKE
+                    R.id.navigation_heat_wave -> PlaceType.HEAT_WAVE
+                    else -> throw Exception("Unknown menu: ${menu.title}")
+                }
+                map.clear()
+                vm.findPlace(placeType, lastLocate)
+            }
+            false
         }
     }
 
@@ -105,6 +125,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     map.uiSettings.isMyLocationButtonEnabled = true
                     moveCameraAndZoom(lastLocate)
                     binding.btnRefresh.visibility = View.VISIBLE
+                    vm.findPlace(type = PlaceType.FLOOD_DAMAGE, locate = lastLocate)
                 }
             }
             result.error?.let { exception ->
@@ -113,12 +134,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun marking(locate: LatLng, title: String = "") {
+    private fun marking(place: PlaceFindResult) {
         if (::map.isInitialized) {
             map.addMarker(
                 MarkerOptions()
-                    .position(locate)
-                    .runIf(title != "") { title(title) }
+                    .position(place.locate)
+                    .title(place.name)
+                    .snippet(place.address)
             )
         }
     }
@@ -128,6 +150,18 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             // max: 21f
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(locate, 18f))
         }
+    }
+
+    private fun handleException(throwable: Throwable) {
+        val message = when (BuildConfig.DEBUG) {
+            true -> throwable.message.toString()
+            else -> getString(R.string.activity_map_toast_occur_exception)
+        }
+        toast(message)
+    }
+
+    private fun handleLocate(locates: List<PlaceFindResult>) {
+        locates.forEach(::marking)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
