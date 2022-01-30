@@ -10,16 +10,35 @@
 package team.gdsc.shelper.activity.map.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
 import team.gdsc.shelper.activity.map.datasource.PlaceFindDataSource
-import javax.inject.Inject
 import team.gdsc.shelper.activity.map.enum.PlaceType
+import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
+import javax.inject.Inject
 
 @HiltViewModel
 class MapViewModel @Inject constructor(
     private val placeFindDataSource: PlaceFindDataSource,
 ) : ViewModel() {
-    fun findPlace(type: PlaceType) {
 
+    private val _exceptionFlow = MutableSharedFlow<Throwable>()
+    val exceptionFlow = _exceptionFlow.asSharedFlow()
+
+    private val _locateFlow = MutableSharedFlow<List<PlaceFindResult>>()
+    val locateFlow = _locateFlow.asSharedFlow()
+
+    fun findPlace(type: PlaceType, locate: LatLng) = viewModelScope.launch {
+        placeFindDataSource(type, locate)
+            .onSuccess { response ->
+                _locateFlow.emit(response)
+            }
+            .onFailure { exception ->
+                _exceptionFlow.emit(exception)
+            }
     }
 }

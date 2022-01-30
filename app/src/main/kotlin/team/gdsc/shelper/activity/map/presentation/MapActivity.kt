@@ -32,7 +32,6 @@ import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
-import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
@@ -92,21 +91,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun setOnClickListeners() {
         binding.btnOpenDrawer.setOnClickListener {
             binding.dlContainer.open()
-        }
-
-        binding.tvGuide.setOnClickListener {
-            println("CLICKED")
-            logeukes { "CC" }
-            startActivity(Intent(this, GuideActivity::class.java))
-        }
-
-        binding.nvDrawer.setOnClickListener {
-            logeukes { "AA" }
-        }
-
-        binding.nvDrawer.setNavigationItemSelectedListener {
-            logeukes { "BB" }
-            true
         }
     }
 
