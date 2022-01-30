@@ -16,8 +16,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
-import team.gdsc.shelper.activity.map.datasource.PlaceFindDataSource
 import team.gdsc.shelper.activity.map.constant.PlaceType
+import team.gdsc.shelper.activity.map.datasource.PlaceFindDataSource
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import javax.inject.Inject
 
