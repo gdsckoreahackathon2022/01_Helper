@@ -30,6 +30,7 @@
     <string name="activity_map_navigation_volcano">화산</string>
     <string name="activity_map_navigation_earthquake">지진</string>
     <string name="activity_map_navigation_heat_wave">폭염</string>
+    <string name="activity_map_toast_none_shelper">주변에 피난처가 없어요 😢</string>
 
     <string name="activity_guide_chip_all">전체</string>
     <string name="activity_guide_chip_flood">홍수</string>

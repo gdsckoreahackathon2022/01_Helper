@@ -13,7 +13,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +32,7 @@ import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.activity.map.enum.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import team.gdsc.shelper.databinding.ActivityMapBinding
@@ -49,6 +49,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private var lastLocate = LatLng(Double.NaN, Double.NaN)
     private lateinit var binding: ActivityMapBinding
     private val vm: MapViewModel by viewModels()
+    private var firstRequest = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
@@ -98,6 +99,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.dlContainer.open()
         }
 
+        binding.tvGuide.setOnClickListener {
+            startActivity(Intent(this, GuideActivity::class.java))
+        }
+
         binding.bnvNavigation.setOnItemSelectedListener { menu ->
             if (::map.isInitialized) {
                 val placeType = when (menu.itemId) {
@@ -110,8 +115,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 map.clear()
                 vm.findPlace(placeType, lastLocate)
             }
-            false
+            true
         }
+
+        binding.bnvNavigation.setOnItemReselectedListener {}
     }
 
     @SuppressLint("MissingPermission")
@@ -124,7 +131,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     map.isMyLocationEnabled = true
                     map.uiSettings.isMyLocationButtonEnabled = true
                     moveCameraAndZoom(lastLocate)
-                    binding.btnRefresh.visibility = View.VISIBLE
                     vm.findPlace(type = PlaceType.FLOOD_DAMAGE, locate = lastLocate)
                 }
             }
@@ -161,7 +167,16 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun handleLocate(locates: List<PlaceFindResult>) {
-        locates.forEach(::marking)
+        if (locates.isEmpty()) {
+            toast(getString(R.string.activity_map_toast_none_shelper))
+        } else {
+            if (!firstRequest) {
+                moveCameraAndZoom(locates.first().locate)
+            } else {
+                firstRequest = false
+            }
+            locates.forEach(::marking)
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

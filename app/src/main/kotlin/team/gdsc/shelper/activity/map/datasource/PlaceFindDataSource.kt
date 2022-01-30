@@ -39,6 +39,7 @@ class PlaceFindDataSource @Inject constructor(private val api: PlaceFindApi) {
                         )
                     }
                 }
+                ResponseStatus.ZERO_RESULTS.string -> emptyList()
                 else -> throw Exception("ResponseStatus is not OK.\nstatus: $status")
             }
         } else {
