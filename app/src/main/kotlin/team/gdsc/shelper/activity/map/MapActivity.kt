@@ -95,7 +95,18 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         binding.tvGuide.setOnClickListener {
+            println("CLICKED")
+            logeukes { "CC" }
             startActivity(Intent(this, GuideActivity::class.java))
+        }
+
+        binding.nvDrawer.setOnClickListener {
+            logeukes { "AA" }
+        }
+
+        binding.nvDrawer.setNavigationItemSelectedListener {
+            logeukes { "BB" }
+            true
         }
     }
 

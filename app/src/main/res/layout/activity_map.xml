@@ -22,6 +22,59 @@
         tools:openDrawer="start"
         tools:theme="@style/Theme.Shelper">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fcv_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/bnv_navigation"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/secondary" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_open_drawer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:contentDescription="@null"
+                app:backgroundTint="@color/primary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_round_menu_24" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_map_btn_refresh"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                app:backgroundTint="@color/primary"
+                app:icon="@drawable/ic_round_refresh_24"
+                app:iconTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_open_drawer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_open_drawer"
+                tools:visibility="visible" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bnv_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemRippleColor="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/navigation_map"
+                tools:layout_height="70dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nv_drawer"
             android:layout_width="wrap_content"
@@ -87,60 +140,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.navigation.NavigationView>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:theme="@style/Theme.Shelper">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fcv_map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/bnv_navigation"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:background="@color/secondary" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_open_drawer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:contentDescription="@null"
-                app:backgroundTint="@color/primary"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_round_menu_24" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_map_btn_refresh"
-                android:textColor="@color/black"
-                android:visibility="invisible"
-                app:backgroundTint="@color/primary"
-                app:icon="@drawable/ic_round_refresh_24"
-                app:iconTint="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_open_drawer"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_open_drawer"
-                tools:visibility="visible" />
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bnv_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemRippleColor="@null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:menu="@menu/navigation_map"
-                tools:layout_height="70dp" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 
