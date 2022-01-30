@@ -32,6 +32,7 @@ import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
@@ -85,7 +86,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
 
-       setOnClickListeners()
+        setOnClickListeners()
     }
 
     private fun setOnClickListeners() {
@@ -93,7 +94,9 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.dlContainer.open()
         }
 
-        binding.
+        binding.tvGuide.setOnClickListener {
+            startActivity(Intent(this, GuideActivity::class.java))
+        }
     }
 
     @SuppressLint("MissingPermission")
