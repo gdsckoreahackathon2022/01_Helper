@@ -2,16 +2,16 @@
  * Shelper © 2022 Team Helper. all rights reserved.
  * Shelper license is under the MIT.
  *
- * [Southwest.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:55
+ * [Location.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:54
  *
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.model
+package team.gdsc.shelper.activity.map.model.data
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class Southwest(
+data class Location(
     @field:JsonProperty("lng")
     val lng: Double? = null,
 

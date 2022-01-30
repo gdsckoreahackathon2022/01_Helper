@@ -23,6 +23,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
+import team.gdsc.shelper.activity.map.datasource.PlaceFindApi
 import team.gdsc.shelper.util.constant.Api
 
 @Module
@@ -46,9 +47,10 @@ object RetrofitModule {
 
     @Provides
     @ViewModelScoped
-    fun provideSignedRetrofit(): Retrofit = Retrofit.Builder()
+    fun providePlaceFindApi(): PlaceFindApi = Retrofit.Builder()
         .baseUrl(Api.GoogleMap)
         .addConverterFactory(JacksonConverterFactory.create(mapper))
         .client(getInterceptor(loggingInterceptor))
         .build()
+        .create(PlaceFindApi::class.java)
 }

@@ -11,20 +11,20 @@
     <item
         android:id="@+id/navigatin_flood_damage"
         android:icon="@drawable/selector_flood_damage"
-        android:title="@string/map_navigation_flood_damage" />
+        android:title="@string/activity_map_navigation_flood_damage" />
 
     <item
         android:id="@+id/navigation_volcano"
         android:icon="@drawable/selector_volcano"
-        android:title="@string/map_navigation_volcano" />
+        android:title="@string/activity_map_navigation_volcano" />
 
     <item
         android:id="@+id/navgation_earthquake"
         android:icon="@drawable/selector_landslide"
-        android:title="@string/map_navigation_earthquake" />
+        android:title="@string/activity_map_navigation_earthquake" />
 
     <item
         android:id="@+id/navigation_heat_wave"
         android:icon="@drawable/selector_brightness"
-        android:title="@string/map_navigation_heat_wave" />
+        android:title="@string/activity_map_navigation_heat_wave" />
 </menu>

@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.model
+package team.gdsc.shelper.activity.map.model.data
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

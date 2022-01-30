@@ -11,7 +11,15 @@ package team.gdsc.shelper.activity.map.presentation
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import team.gdsc.shelper.activity.map.datasource.PlaceFindDataSource
 import javax.inject.Inject
+import team.gdsc.shelper.activity.map.enum.PlaceType
 
 @HiltViewModel
-class MapViewModel @Inject constructor() : ViewModel()
+class MapViewModel @Inject constructor(
+    private val placeFindDataSource: PlaceFindDataSource,
+) : ViewModel() {
+    fun findPlace(type: PlaceType) {
+
+    }
+}
