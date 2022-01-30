@@ -13,10 +13,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.databinding.DataBindingUtil
 import com.birjuvachhani.locus.Locus
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -29,6 +31,7 @@ import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
 import team.gdsc.shelper.util.extension.runIf
@@ -39,11 +42,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var initLocateService = false
     private lateinit var map: GoogleMap
+    private var lastLocate = LatLng(Double.NaN, Double.NaN)
+    private lateinit var binding: ActivityMapBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_map)
 
         if (!NetworkUtil.isNetworkAvailable(applicationContext)) {
             finish()
@@ -58,7 +63,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         toast(getString(R.string.activity_map_loading_locate))
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.fcv_map) as SupportMapFragment
+        val mapFragment =
+            supportFragmentManager.findFragmentById(R.id.fcv_map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         startLocationService()
 
@@ -82,14 +88,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun startLocationService() {
         Locus.startLocationUpdates(this) { result ->
             result.location?.let { location ->
-                val (latitude, longitude) = listOf(location.latitude, location.longitude)
-                val locate = LatLng(latitude, longitude)
-                // marking(latitude, longitude)
+                lastLocate = LatLng(location.latitude, location.longitude)
                 if (!initLocateService) {
                     initLocateService = true
                     map.isMyLocationEnabled = true
                     map.uiSettings.isMyLocationButtonEnabled = true
-                    moveCameraAndZoom(locate)
+                    moveCameraAndZoom(lastLocate)
+                    binding.btnRefresh.visibility = View.VISIBLE
                 }
             }
             result.error?.let { exception ->
@@ -110,6 +115,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun moveCameraAndZoom(locate: LatLng) {
         if (::map.isInitialized) {
+            // max: 21f
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(locate, 18f))
         }
     }
