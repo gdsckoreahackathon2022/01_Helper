@@ -75,63 +75,74 @@
                 android:id="@+id/cg_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="10dp"
                 app:selectionRequired="true"
                 app:singleLine="true"
                 app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_all"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="전체" />
+                    android:checked="true"
+                    android:text="@string/activity_guide_chip_all" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_flood"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="홍수" />
+                    android:text="@string/activity_guide_chip_flood" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_heavy_rain"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="홍수" />
+                    android:text="@string/activity_guide_heavy_rain" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_tsunami"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="쓰나미" />
+                    android:text="@string/activity_guide_chip_tsunami" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_typhoon"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="태풍" />
+                    android:text="@string/activity_guide_chip_typhoon" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_volcano"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화산" />
+                    android:text="@string/activity_guide_chip_volcano" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_earthquake"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="지진" />
+                    android:text="@string/activity_guide_chip_earthquake" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_heat_wave"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="폭염" />
+                    android:text="@string/activity_guide_chip_heat_wave" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_heavy_snow"
+                    style="@style/guide_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="폭설" />
+                    android:text="@string/activity_guide_chip_heave_snow" />
 
             </com.google.android.material.chip.ChipGroup>
 

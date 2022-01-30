@@ -31,4 +31,13 @@
     <string name="activity_map_drawer_message">안전 안내 문자</string>
     <string name="activity_map_drawer_call">주요 기관 연락처</string>
     <string name="activity_map_drawer_information">앱 정보</string>
+    <string name="activity_guide_chip_all">전체</string>
+    <string name="activity_guide_chip_flood">홍수</string>
+    <string name="activity_guide_heavy_rain">홍수</string>
+    <string name="activity_guide_chip_tsunami">쓰나미</string>
+    <string name="activity_guide_chip_typhoon">태풍</string>
+    <string name="activity_guide_chip_volcano">화산</string>
+    <string name="activity_guide_chip_earthquake">지진</string>
+    <string name="activity_guide_chip_heat_wave">폭염</string>
+    <string name="activity_guide_chip_heave_snow">폭설</string>
 </resources>

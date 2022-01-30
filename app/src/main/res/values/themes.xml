@@ -34,8 +34,9 @@
         <item name="android:navigationBarColor">@color/white</item>
     </style>
 
-    <style name="guide_chip">
-
+    <style name="guide_chip" parent="@style/Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/primary</item>
+        <item name="android:fontFamily">@font/notosans</item>
     </style>
 
     <style name="iv_round_corner">
