@@ -15,6 +15,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnticipateInterpolator
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
@@ -44,6 +45,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var map: GoogleMap
     private var lastLocate = LatLng(Double.NaN, Double.NaN)
     private lateinit var binding: ActivityMapBinding
+    private val vm: MapViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
@@ -81,6 +83,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     start()
                 }
             }
+        }
+
+        binding.btnOpenDrawer.setOnClickListener {
+            binding.dlContainer.open()
         }
     }
 

@@ -9,6 +9,7 @@
 
 <resources>
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
     <color name="backgroundWhite">#F4F5F9</color>
 
     <color name="secondary">#E7E9FE</color>
