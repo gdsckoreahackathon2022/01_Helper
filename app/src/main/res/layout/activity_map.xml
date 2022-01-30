@@ -19,22 +19,22 @@
         android:id="@+id/dl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:openDrawer="start">
+        tools:openDrawer="start"
+        tools:theme="@style/Theme.Shelper">
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nv_drawer"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cll_container_drawer"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="70dp"
                 android:layout_marginStart="30dp"
-                android:fitsSystemWindows="true"
-                tools:theme="@style/Theme.Shelper">
+                android:fitsSystemWindows="true">
 
                 <ImageView
                     android:id="@+id/iv_close"
@@ -117,6 +117,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_refresh"
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activity_map_btn_refresh"
