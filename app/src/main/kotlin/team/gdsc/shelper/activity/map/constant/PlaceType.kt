@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.enum
+package team.gdsc.shelper.activity.map.constant
 
 enum class PlaceType(val query: String, val isType: Boolean = true) {
     FLOOD_DAMAGE("mountain", false),

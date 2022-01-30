@@ -11,8 +11,8 @@ package team.gdsc.shelper.activity.map.datasource
 
 import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.scopes.ViewModelScoped
-import team.gdsc.shelper.activity.map.enum.PlaceType
-import team.gdsc.shelper.activity.map.enum.ResponseStatus
+import team.gdsc.shelper.activity.map.constant.PlaceType
+import team.gdsc.shelper.activity.map.constant.ResponseStatus
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import team.gdsc.shelper.util.extension.isValid
 import team.gdsc.shelper.util.extension.toException

@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import team.gdsc.shelper.activity.map.datasource.PlaceFindDataSource
-import team.gdsc.shelper.activity.map.enum.PlaceType
+import team.gdsc.shelper.activity.map.constant.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import javax.inject.Inject
 
@@ -26,6 +26,8 @@ class MapViewModel @Inject constructor(
     private val placeFindDataSource: PlaceFindDataSource,
 ) : ViewModel() {
 
+    private val locationCaching = hashMapOf<PlaceType, List<PlaceFindResult>>()
+
     private val _exceptionFlow = MutableSharedFlow<Throwable>()
     val exceptionFlow = _exceptionFlow.asSharedFlow()
 
@@ -33,12 +35,17 @@ class MapViewModel @Inject constructor(
     val locateFlow = _locateFlow.asSharedFlow()
 
     fun findPlace(type: PlaceType, locate: LatLng) = viewModelScope.launch {
-        placeFindDataSource(type, locate)
-            .onSuccess { response ->
-                _locateFlow.emit(response)
-            }
-            .onFailure { exception ->
-                _exceptionFlow.emit(exception)
-            }
+        if (locationCaching[type] == null) {
+            placeFindDataSource(type, locate)
+                .onSuccess { response ->
+                    locationCaching[type] = response
+                    _locateFlow.emit(response)
+                }
+                .onFailure { exception ->
+                    _exceptionFlow.emit(exception)
+                }
+        } else {
+            _locateFlow.emit(locationCaching[type]!!)
+        }
     }
 }

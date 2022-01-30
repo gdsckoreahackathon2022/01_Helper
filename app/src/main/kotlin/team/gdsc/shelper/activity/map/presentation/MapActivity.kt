@@ -33,7 +33,7 @@ import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.activity.guide.GuideActivity
-import team.gdsc.shelper.activity.map.enum.PlaceType
+import team.gdsc.shelper.activity.map.constant.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
@@ -44,12 +44,13 @@ import team.gdsc.shelper.util.extension.toast
 @AndroidEntryPoint
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
+    private var firstRequest = true
     private var initLocateService = false
-    private lateinit var map: GoogleMap
     private var lastLocate = LatLng(Double.NaN, Double.NaN)
+
+    private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapBinding
     private val vm: MapViewModel by viewModels()
-    private var firstRequest = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()

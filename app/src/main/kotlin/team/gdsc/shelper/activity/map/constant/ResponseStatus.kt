@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.enum
+package team.gdsc.shelper.activity.map.constant
 
 @Suppress("unused")
 enum class ResponseStatus(val string: String) {
