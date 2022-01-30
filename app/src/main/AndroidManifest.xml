@@ -19,10 +19,10 @@
         <activity
             android:name=".activity.map.MapActivity"
             android:exported="true">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <activity
@@ -31,7 +31,15 @@
 
         <activity
             android:name=".activity.guide.GuideActivity"
-            android:theme="@style/Theme.Shelper" />
+            android:exported="true"
+            android:theme="@style/Theme.Shelper.Guide">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"

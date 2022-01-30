@@ -17,17 +17,48 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/abl_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/mtb_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:navigationIcon="@drawable/ic_round_arrow_back_24"
-                app:navigationIconTint="@color/primaryDark"
-                app:title="@string/activity_map_drawer_guide"
-                app:titleCentered="true"
-                app:titleTextColor="@color/primaryDark" />
+                app:contentInsetStart="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_container_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:padding="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_round_arrow_back_24"
+                        app:tint="@color/primaryDark" />
+
+                    <TextView
+                        android:id="@+id/tv_guide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/activity_map_drawer_guide"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,8 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:clipToPadding="true"
-            android:paddingHorizontal="16dp">
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            android:scrollbars="none">
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/cg_container"

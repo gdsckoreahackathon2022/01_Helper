@@ -34,6 +34,10 @@
         <item name="android:navigationBarColor">@color/white</item>
     </style>
 
+    <style name="guide_chip">
+
+    </style>
+
     <style name="iv_round_corner">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>
