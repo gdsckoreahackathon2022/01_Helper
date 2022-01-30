@@ -19,7 +19,6 @@
         android:id="@+id/dl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:openDrawer="start"
         tools:theme="@style/Theme.Shelper">
 
         <com.google.android.material.navigation.NavigationView
@@ -117,12 +116,14 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_refresh"
-                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activity_map_btn_refresh"
+                android:textColor="@color/black"
                 android:visibility="invisible"
+                app:backgroundTint="@color/primary"
                 app:icon="@drawable/ic_round_refresh_24"
+                app:iconTint="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_open_drawer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

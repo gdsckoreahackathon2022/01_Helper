@@ -135,6 +135,14 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    override fun onBackPressed() {
+        if (binding.dlContainer.isOpen) {
+            binding.dlContainer.close()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     override fun onPause() {
         Locus.stopLocationUpdates()
         super.onPause()
