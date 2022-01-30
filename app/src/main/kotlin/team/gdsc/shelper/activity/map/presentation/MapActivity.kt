@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map
+package team.gdsc.shelper.activity.map.presentation
 
 import android.annotation.SuppressLint
 import android.content.Intent

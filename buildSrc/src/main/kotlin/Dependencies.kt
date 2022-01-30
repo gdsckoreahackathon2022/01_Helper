@@ -1,3 +1,12 @@
+/*
+ * Shelper © 2022 Team Helper. all rights reserved.
+ * Shelper license is under the MIT.
+ *
+ * [Dependencies.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:56
+ *
+ * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+ */
+
 import org.gradle.api.JavaVersion
 
 object Application {
@@ -43,6 +52,7 @@ object Versions {
     object Util {
         const val Erratum = "1.0.1"
         const val Logeukes = "1.0.0"
+        const val Jackson = "2.13.1"
         const val LeakCanary = "2.8.1"
         const val SecretsGradlePlugin = "2.0.0"
         const val CheckDependencyUpdates = "1.5.0"
@@ -83,6 +93,13 @@ object Dependencies {
         "androidx.core:core-splashscreen:${Versions.Ui.Splash}",
         "com.google.android.material:material:${Versions.Ui.Material}",
         "com.google.android.gms:play-services-oss-licenses:${Versions.OssLicense.Master}"
+    )
+
+    val Jackson = listOf(
+        "com.fasterxml.jackson.core:jackson-core:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.core:jackson-databind:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.core:jackson-annotations:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.module:jackson-module-kotlin:${Versions.Util.Jackson}"
     )
 
     val Retrofit = listOf(

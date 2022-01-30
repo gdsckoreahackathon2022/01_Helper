@@ -63,6 +63,7 @@ dependencies {
     Dependencies.Ui.forEach(::implementation)
     Dependencies.Ktx.forEach(::implementation)
     Dependencies.Util.forEach(::implementation)
+    Dependencies.Jackson.forEach(::implementation)
     Dependencies.Location.forEach(::implementation)
     Dependencies.Retrofit.forEach(::implementation)
 
