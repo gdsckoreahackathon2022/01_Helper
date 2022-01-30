@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="team.gdsc.shelper.activity.guide.model.GuideItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:contentPadding="30dp"
+        tools:layout_margin="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/disaster_image"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                app:shapeAppearance="@style/iv_round_corner"
+                app:srcAny="@{item.image}"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/disaster_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginVertical="20dp"
+                android:text="@{item.title}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@tools:sample/lorem" />
+
+            <ScrollView
+                android:id="@+id/sv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="true">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.content}"
+                    android:textSize="15sp"
+                    tools:text="@tools:sample/lorem/random" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
