@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ carrot-android © 2022 Ji Sungbin. all rights reserved.
+  ~ carrot-android license is under the MIT.
+  ~
+  ~ [themes.xml] created by Ji Sungbin on 22. 1. 23. 오전 12:01
+  ~
+  ~ Please see: https://github.com/carrot-style/carrot-android/blob/main/LICENSE.
+  -->
+
+<resources>
+
+    <style name="Theme.Shelper" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorOnSurface">@color/primary</item>
+        <item name="fontFamily">@font/notosans</item>
+        <item name="android:fontFamily">@font/notosans</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Shelper.Guide" parent="Theme.Shelper">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
+        <item name="android:windowBackground">@color/backgroundWhite</item>
+    </style>
+
+    <style name="Theme.Shelper.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Shelper</item>
+
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="font_appearance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:fontFamily">@font/notosans</item>
+    </style>
+
+    <style name="guide_chip" parent="@style/Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/selector_guide_chip</item>
+        <item name="android:textAppearance">@style/font_appearance</item>
+    </style>
+
+    <style name="iv_round_corner">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+</resources>

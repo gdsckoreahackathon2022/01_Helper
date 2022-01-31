@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Shelper © 2022 Team Helper. all rights reserved.
+  ~ Shelper license is under the MIT.
+  ~
+  ~ [selector_flood.xml] created by Ji Sungbin on 22. 1. 30. 오전 12:46
+  ~
+  ~ Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_baseline_flood_24" android:state_checked="true" />
+    <item android:drawable="@drawable/ic_outline_flood_24" android:state_checked="false" />
+</selector>

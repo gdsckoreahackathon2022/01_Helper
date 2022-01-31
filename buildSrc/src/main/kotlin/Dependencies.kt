@@ -1,7 +1,16 @@
+/*
+ * Shelper © 2022 Team Helper. all rights reserved.
+ * Shelper license is under the MIT.
+ *
+ * [Dependencies.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:56
+ *
+ * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+ */
+
 import org.gradle.api.JavaVersion
 
 object Application {
-    const val minSdk = 24
+    const val minSdk = 21
     const val targetSdk = 31
     const val compileSdk = 31
     const val jvmTarget = "11"
@@ -13,18 +22,16 @@ object Application {
 }
 
 object Versions {
-    const val Orbit = "4.3.0"
-
     object Essential {
+        const val Gradle = "7.1.0"
         const val Kotlin = "1.6.10"
         const val Coroutines = "1.6.0"
-        const val Gradle = "7.1.0-rc01"
         const val GoogleService = "4.3.3"
     }
 
     object Ktx {
         const val Core = "1.7.0"
-        const val Fragment = "1.4.0"
+        const val Fragment = "1.4.1"
         const val LifeCycle = "2.4.0"
         const val ViewModel = "2.4.0"
     }
@@ -32,9 +39,9 @@ object Versions {
     object Ui {
         const val Glide = "4.12.0"
         const val Lottie = "4.2.2"
-        const val Material = "1.6.0-alpha02"
         const val AppCompat = "1.4.1"
         const val Splash = "1.0.0-beta01"
+        const val Material = "1.6.0-alpha02"
     }
 
     object Network {
@@ -44,16 +51,17 @@ object Versions {
 
     object Util {
         const val Erratum = "1.0.1"
-        const val Logeukes = "1.0.1"
+        const val Logeukes = "1.0.0"
+        const val Jackson = "2.13.1"
         const val LeakCanary = "2.8.1"
-        const val SystemUiController = "1.0.0"
         const val SecretsGradlePlugin = "2.0.0"
         const val CheckDependencyUpdates = "1.5.0"
     }
 
     object Location {
-        const val Gms = "19.0.1"
         const val Locus = "4.0.1"
+        const val GmsMap = "18.0.2"
+        const val GmsLocation = "19.0.1"
     }
 
     object Jetpack {
@@ -67,17 +75,9 @@ object Versions {
 }
 
 object Dependencies {
-    const val Orbit = "org.orbit-mvi:orbit-viewmodel:${Versions.Orbit}"
     const val Hilt = "com.google.dagger:hilt-android:${Versions.Jetpack.Hilt}"
-
-    object Compiler {
-        const val Glide = "com.github.bumptech.glide:compiler:${Versions.Ui.Glide}"
-        const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
-    }
-
-    val Essential = listOf(
+    const val Coroutine =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Essential.Coroutines}"
-    )
 
     val Ktx = listOf(
         "androidx.core:core-ktx:${Versions.Ktx.Core}",
@@ -95,6 +95,13 @@ object Dependencies {
         "com.google.android.gms:play-services-oss-licenses:${Versions.OssLicense.Master}"
     )
 
+    val Jackson = listOf(
+        "com.fasterxml.jackson.core:jackson-core:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.core:jackson-databind:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.core:jackson-annotations:${Versions.Util.Jackson}",
+        "com.fasterxml.jackson.module:jackson-module-kotlin:${Versions.Util.Jackson}"
+    )
+
     val Retrofit = listOf(
         "com.squareup.retrofit2:retrofit:${Versions.Network.Retrofit}",
         "com.squareup.okhttp3:logging-interceptor:${Versions.Network.OkHttp}",
@@ -102,17 +109,22 @@ object Dependencies {
     )
 
     val Util = listOf(
-        "io.github.jisungbin:erratum:${Versions.Util.Erratum}",
-        "io.github.jisungbin:logeukes:${Versions.Util.Logeukes}",
-        "land.sungbin:systemuicontroller:${Versions.Util.SystemUiController}"
+        "land.sungbin:erratum:${Versions.Util.Erratum}",
+        "land.sungbin:logeukes:${Versions.Util.Logeukes}"
     )
 
     val Location = listOf(
         "com.github.BirjuVachhani:locus-android:${Versions.Location.Locus}",
-        "com.google.android.gms:play-services-location:${Versions.Location.Gms}"
+        "com.google.android.gms:play-services-maps:${Versions.Location.GmsMap}",
+        "com.google.android.gms:play-services-location:${Versions.Location.GmsLocation}"
     )
 
     val Debug = listOf(
         "com.squareup.leakcanary:leakcanary-android:${Versions.Util.LeakCanary}"
     )
+
+    object Compiler {
+        const val Glide = "com.github.bumptech.glide:compiler:${Versions.Ui.Glide}"
+        const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
+    }
 }

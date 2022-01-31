@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Shelper © 2022 Team Helper. all rights reserved.
+  ~ Shelper license is under the MIT.
+  ~
+  ~ [colors.xml] created by Ji Sungbin on 22. 1. 29. 오후 10:12
+  ~
+  ~ Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+  -->
+
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="backgroundWhite">#F4F5F9</color>
+
+    <color name="secondary">#E7E9FE</color>
+    <color name="primary">#CAD0FF</color>
+    <color name="primaryDark">#7D8BF2</color>
+</resources>
