@@ -9,7 +9,12 @@
 
 package team.gdsc.shelper.activity.guide.model
 
-data class GuideItem(val title: String, val content: String, val image: String) {
+@Suppress("DataClassPrivateConstructor")
+data class GuideItem private constructor(
+    val title: String,
+    val content: String,
+    val image: String,
+) {
     companion object {
         private val titles = listOf("홍수", "호우", "쓰나미", "태풍", "화산", "지진", "폭염", "폭설")
         private val images = mapOf(

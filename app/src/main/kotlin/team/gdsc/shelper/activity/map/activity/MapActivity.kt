@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.presentation
+package team.gdsc.shelper.activity.map.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -31,6 +31,7 @@ import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
+import team.gdsc.shelper.activity.contact.ContactActivity
 import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.activity.map.constant.PlaceType
@@ -102,6 +103,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding.tvGuide.setOnClickListener {
             startActivity(Intent(this, GuideActivity::class.java))
+        }
+
+        binding.tvContact.setOnClickListener {
+            startActivity(Intent(this, ContactActivity::class.java))
         }
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->

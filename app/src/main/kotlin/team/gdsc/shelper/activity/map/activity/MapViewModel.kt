@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.map.presentation
+package team.gdsc.shelper.activity.map.activity
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

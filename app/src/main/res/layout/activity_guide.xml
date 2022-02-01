@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Shelper © 2022 Team Helper. all rights reserved.
+  ~ Shelper license is under the MIT.
+  ~
+  ~ [activity_guide.xml] created by Ji Sungbin on 22. 2. 1. 오후 5:40
+  ~
+  ~ Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+  -->
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">

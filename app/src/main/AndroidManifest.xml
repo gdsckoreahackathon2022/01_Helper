@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Shelper.Splash">
 
         <activity
-            android:name=".activity.map.presentation.MapActivity"
+            android:name=".activity.map.activity.MapActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,10 @@
 
         <activity
             android:name=".activity.guide.GuideActivity"
+            android:theme="@style/Theme.Shelper.Guide" />
+
+        <activity
+            android:name=".activity.contact.ContactActivity"
             android:theme="@style/Theme.Shelper.Guide" />
 
         <activity
