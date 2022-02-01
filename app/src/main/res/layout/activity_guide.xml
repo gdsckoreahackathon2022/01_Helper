@@ -16,7 +16,7 @@
     </data>
 
     <LinearLayout
-        android:id="@+id/cl_container"
+        android:id="@+id/ll_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -29,7 +29,7 @@
             android:background="@color/white">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/mtb_toolbar"
+                android:id="@+id/tb_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentInsetStart="0dp">
