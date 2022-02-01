@@ -14,7 +14,7 @@
     <data>
 
         <variable
-            name="item"
+            name="message"
             type="java.lang.String" />
     </data>
 
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="@{item}"
+                android:text="@{message}"
                 tools:maxLines="4"
                 tools:text="@tools:sample/lorem/random" />
 
