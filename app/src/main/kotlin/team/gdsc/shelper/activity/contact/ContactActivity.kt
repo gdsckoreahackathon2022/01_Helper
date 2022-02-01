@@ -10,16 +10,19 @@
 package team.gdsc.shelper.activity.contact
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import team.gdsc.shelper.R
-import team.gdsc.shelper.activity.base.BaseActivity
 import team.gdsc.shelper.databinding.ActivityContactBinding
 
-class ContactActivity : BaseActivity<ActivityContactBinding>(R.layout.activity_contact) {
+class ContactActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityContactBinding
     private val contactAdpater by lazy { ContactAdpater() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_contact)
 
         binding.ivBack.setOnClickListener {
             finish()
