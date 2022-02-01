@@ -12,6 +12,7 @@ package team.gdsc.shelper.activity.message.activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.github.jisungbin.logeukes.logeukes
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
@@ -31,13 +32,16 @@ class MessageViewModel @Inject constructor(
     val messageFlow = _messageFlow.asSharedFlow()
 
     fun request() = viewModelScope.launch {
+        logeukes { "request" }
         if (DataStore.messages.isEmpty()) {
             messageRequestDataSource()
                 .onSuccess { messages ->
+                    logeukes { messages }
                     DataStore.messages = messages
                     _messageFlow.emit(messages)
                 }
                 .onFailure { exception ->
+                    logeukes { exception }
                     _exceptionFlow.emit(exception)
                 }
         } else {

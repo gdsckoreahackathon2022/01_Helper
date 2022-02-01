@@ -14,7 +14,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
+import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.databinding.ActivityMessageBinding
@@ -31,9 +31,9 @@ class MessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_message)
 
-        vm.request()
         vm.messageFlow.collectWithLifecycle(this, ::handleMessage)
         vm.exceptionFlow.collectWithLifecycle(this, ::handleException)
+        vm.request()
     }
 
     private fun handleException(throwable: Throwable) {
@@ -45,6 +45,7 @@ class MessageActivity : AppCompatActivity() {
     }
 
     private fun handleMessage(messages: List<String>) {
+        logeukes { messages }
         binding.rvMessage.apply {
             setHasFixedSize(true)
             adapter = MessageAdapter(messages).apply {

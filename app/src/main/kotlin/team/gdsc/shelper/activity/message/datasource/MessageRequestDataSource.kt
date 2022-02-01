@@ -10,6 +10,7 @@
 package team.gdsc.shelper.activity.message.datasource
 
 import dagger.hilt.android.scopes.ViewModelScoped
+import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.util.extension.isValid
 import team.gdsc.shelper.util.extension.toException
 import javax.inject.Inject
@@ -19,8 +20,10 @@ class MessageRequestDataSource @Inject constructor(private val api: MessageReque
     suspend operator fun invoke() = runCatching {
         val request = api.request()
         if (request.isValid()) {
+            logeukes { "valid" }
             request.body()!!.disasterSmsList.map { message -> message?.msgCn ?: "ERROR" }
         } else {
+            logeukes { "error" }
             throw request.toException()
         }
     }
