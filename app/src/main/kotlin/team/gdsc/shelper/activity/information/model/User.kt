@@ -30,10 +30,10 @@ data class User(
             "성빈" to "ji@sungb.in"
         )
         private val actions = mapOf(
-            "성빈" to "개발",
-            "민경" to "개발",
-            "소윤" to "디자인",
-            "예슬" to "기획"
+            "성빈" to "Develop",
+            "민경" to "Develop",
+            "소윤" to "Design",
+            "예슬" to "Plan"
         )
 
         fun getAll() = names.map { name ->

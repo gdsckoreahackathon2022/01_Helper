@@ -28,6 +28,10 @@ class InformationActivitty : AppCompatActivity() {
             finish()
         }
 
+        val spanCount = 2 // 3 columns
+        val spacing = 50 // 50px
+        val includeEdge = true
+        binding.rvUser.addItemDecoration(GridSpacingItemDecoration(spanCount, spacing, includeEdge))
         binding.rvUser.apply {
             setHasFixedSize(true)
             adapter = userAdapter.apply {

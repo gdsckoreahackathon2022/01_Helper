@@ -23,7 +23,6 @@
         style="?attr/materialCardViewElevatedStyle"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
         app:cardElevation="5dp"
@@ -40,8 +39,8 @@
 
             <ImageView
                 android:id="@+id/iv_user"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:contentDescription="@null"
                 app:srcAny="@{user.memoji}"
                 tools:src="@tools:sample/avatars" />
@@ -50,29 +49,36 @@
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:includeFontPadding="false"
-                android:paddingVertical="10dp"
                 android:text="@{user.name}"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 tools:text="성빈" />
 
             <TextView
                 android:id="@+id/tv_action"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:includeFontPadding="false"
                 android:text="@{user.action}"
                 android:textColor="@color/black"
+                android:textSize="15sp"
                 tools:text="개발" />
 
             <TextView
                 android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:includeFontPadding="false"
-                android:paddingTop="10dp"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:text="@{user.email}"
                 android:textColor="@color/black"
+                android:textSize="10sp"
+                tools:ignore="SmallSp"
                 tools:text="ji@sungb.in" />
 
         </LinearLayout>
