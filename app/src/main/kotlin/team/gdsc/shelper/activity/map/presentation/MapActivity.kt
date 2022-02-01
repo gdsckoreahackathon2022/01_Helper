@@ -103,6 +103,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.dlContainer.open()
         }
 
+        binding.ivClose.setOnClickListener {
+            binding.dlContainer.close()
+        }
+
         binding.tvGuide.setOnClickListener {
             startActivity(Intent(this, GuideActivity::class.java))
         }
