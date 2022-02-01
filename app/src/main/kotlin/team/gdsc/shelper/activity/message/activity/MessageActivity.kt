@@ -14,9 +14,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
+import team.gdsc.shelper.activity.message.DataStore
 import team.gdsc.shelper.databinding.ActivityMessageBinding
 import team.gdsc.shelper.util.extension.collectWithLifecycle
 import team.gdsc.shelper.util.extension.toast
@@ -37,7 +37,21 @@ class MessageActivity : AppCompatActivity() {
 
         vm.messageFlow.collectWithLifecycle(this, ::handleMessage)
         vm.exceptionFlow.collectWithLifecycle(this, ::handleException)
-        vm.request()
+
+        if (DataStore.messages.isEmpty()) {
+            vm.request()
+        } else {
+            initRvMessage(DataStore.messages)
+        }
+    }
+
+    private fun initRvMessage(messages: List<String>) {
+        binding.rvMessage.apply {
+            setHasFixedSize(true)
+            adapter = MessageAdapter(messages).apply {
+                setHasStableIds(true)
+            }
+        }
     }
 
     private fun handleException(throwable: Throwable) {
@@ -49,12 +63,6 @@ class MessageActivity : AppCompatActivity() {
     }
 
     private fun handleMessage(messages: List<String>) {
-        logeukes { messages }
-        binding.rvMessage.apply {
-            setHasFixedSize(true)
-            adapter = MessageAdapter(messages).apply {
-                setHasStableIds(true)
-            }
-        }
+        initRvMessage(messages)
     }
 }

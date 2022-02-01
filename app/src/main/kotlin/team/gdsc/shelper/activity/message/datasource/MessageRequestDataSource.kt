@@ -20,10 +20,8 @@ class MessageRequestDataSource @Inject constructor(private val api: MessageReque
     suspend operator fun invoke() = runCatching {
         val request = api.request()
         if (request.isValid()) {
-            logeukes { "valid" }
             request.body()!!.disasterSmsList.map { message -> message?.msgCn ?: "ERROR" }
         } else {
-            logeukes { "error" }
             throw request.toException()
         }
     }
