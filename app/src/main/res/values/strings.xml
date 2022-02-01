@@ -9,6 +9,7 @@
 
 <resources>
     <string name="app_name">Shelper</string>
+    <string name="app_label">자연재해 대피를 위한 안전 첫걸음</string>
 
     <string name="locus_rationale_title">위치 권한 필요</string>
     <string name="locus_rationale_message">현재 위치에 맞는 피난처를 조회하기 위해 위치 권한이 필요해요.</string>
@@ -32,6 +33,7 @@
     <string name="activity_map_navigation_earthquake">지진</string>
     <string name="activity_map_navigation_heat_wave">폭염</string>
     <string name="activity_map_toast_none_shelper">주변에 피난처가 없어요 😢</string>
+    <string name="activity_map_toast_occur_exception">오류가 발생했어요!</string>
 
     <string name="activity_guide_chip_all">전체</string>
     <string name="activity_guide_chip_flood">홍수</string>
@@ -42,5 +44,6 @@
     <string name="activity_guide_chip_earthquake">지진</string>
     <string name="activity_guide_chip_heat_wave">폭염</string>
     <string name="activity_guide_chip_heave_snow">폭설</string>
-    <string name="activity_map_toast_occur_exception">오류가 발생했어요!</string>
+
+    <string name="activity_information_about_us">About Us</string>
 </resources>

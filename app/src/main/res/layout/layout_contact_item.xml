@@ -24,8 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
-        app:cardElevation="10dp"
+        app:cardElevation="5dp"
         app:contentPadding="20dp"
         tools:theme="@style/Theme.Shelper">
 
@@ -66,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
                     android:text="@{contact.number}"
+                    android:textColor="@color/black"
                     tools:text="@tools:sample/us_phones" />
 
             </LinearLayout>

@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.guide.model.GuideItem
-import team.gdsc.shelper.databinding.ActivityGuideBinding
+import team.gdsc.shelper.bindingadapter.ActivityGuideBinding
 
 class GuideActivity : AppCompatActivity() {
 

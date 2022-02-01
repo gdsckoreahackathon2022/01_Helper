@@ -16,7 +16,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.guide.model.GuideItem
-import team.gdsc.shelper.databinding.LayoutGuideItemBinding
+import team.gdsc.shelper.bindingadapter.LayoutGuideItemBinding
 
 class GuideAdpater : RecyclerView.Adapter<GuideAdpater.ActionGuidelineHolder>() {
 

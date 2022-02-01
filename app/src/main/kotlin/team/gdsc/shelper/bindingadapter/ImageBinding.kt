@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.guide.databinding
+package team.gdsc.shelper.bindingadapter
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

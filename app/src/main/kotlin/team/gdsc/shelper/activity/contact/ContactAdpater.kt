@@ -15,7 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.contact.model.ContactItem
-import team.gdsc.shelper.databinding.LayoutContactItemBinding
+import team.gdsc.shelper.bindingadapter.LayoutContactItemBinding
 
 class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ActionGuidelineHolder>() {
 

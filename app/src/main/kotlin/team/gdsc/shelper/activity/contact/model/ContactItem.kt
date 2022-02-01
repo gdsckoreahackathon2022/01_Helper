@@ -10,7 +10,10 @@
 package team.gdsc.shelper.activity.contact.model
 
 @Suppress("DataClassPrivateConstructor")
-data class ContactItem private constructor(val name: String, val number: String) {
+data class ContactItem private constructor(
+    val name: String,
+    val number: String,
+) {
     companion object {
         fun getAll() = listOf(
             ContactItem("행정안전부", "044)205-6366"),

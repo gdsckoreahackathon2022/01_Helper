@@ -36,7 +36,7 @@ import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.activity.map.constant.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
-import team.gdsc.shelper.databinding.ActivityMapBinding
+import team.gdsc.shelper.bindingadapter.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
 import team.gdsc.shelper.util.extension.collectWithLifecycle
