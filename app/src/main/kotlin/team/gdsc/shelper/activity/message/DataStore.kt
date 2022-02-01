@@ -10,5 +10,5 @@
 package team.gdsc.shelper.activity.message
 
 object DataStore {
-    val contents = ""
+    var messages: List<String> = emptyList()
 }

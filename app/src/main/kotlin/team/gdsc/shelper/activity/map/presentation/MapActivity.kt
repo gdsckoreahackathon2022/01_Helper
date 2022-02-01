@@ -37,6 +37,7 @@ import team.gdsc.shelper.activity.guide.GuideActivity
 import team.gdsc.shelper.activity.information.InformationActivitty
 import team.gdsc.shelper.activity.map.constant.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
+import team.gdsc.shelper.activity.message.activity.MessageActivity
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
@@ -112,6 +113,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding.tvInformation.setOnClickListener {
             startActivity(Intent(this, InformationActivitty::class.java))
+        }
+
+        binding.tvMessage.setOnClickListener {
+            startActivity(Intent(this, MessageActivity::class.java))
         }
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->

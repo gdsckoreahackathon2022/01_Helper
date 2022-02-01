@@ -42,6 +42,10 @@
             android:theme="@style/Theme.Shelper.Guide" />
 
         <activity
+            android:name=".activity.message.activity.MessageActivity"
+            android:theme="@style/Theme.Shelper.Guide" />
+
+        <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
             android:theme="@style/Theme.Shelper" />
 
