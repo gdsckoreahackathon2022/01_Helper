@@ -7,7 +7,7 @@
  * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
  */
 
-package team.gdsc.shelper.activity.contact
+package team.gdsc.shelper.activity.information
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -15,21 +15,22 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.contact.model.Contact
-import team.gdsc.shelper.databinding.LayoutContactItemBinding
+import team.gdsc.shelper.activity.information.model.User
+import team.gdsc.shelper.databinding.LayoutUserItemBinding
 
-class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() {
+class InformationAdapter : RecyclerView.Adapter<InformationAdapter.ActionGuidelineHolder>() {
 
-    private var items = Contact.getAll()
+    private var items = User.getAll()
 
-    class ContactViewHolder(private val binding: LayoutContactItemBinding) :
+    class ActionGuidelineHolder(private val binding: LayoutUserItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(contact: Contact) {
-            binding.contact = contact
+        fun bind(user: User) {
+            binding.contact = user
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
-        return ContactViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionGuidelineHolder {
+        return ActionGuidelineHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.layout_contact_item,
@@ -41,7 +42,7 @@ class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() 
 
     override fun getItemId(position: Int) = position.toLong()
 
-    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ActionGuidelineHolder, position: Int) {
         holder.bind(items[position])
     }
 

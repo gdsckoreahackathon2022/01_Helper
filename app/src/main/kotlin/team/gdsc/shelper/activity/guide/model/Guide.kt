@@ -10,7 +10,7 @@
 package team.gdsc.shelper.activity.guide.model
 
 @Suppress("DataClassPrivateConstructor")
-data class GuideItem private constructor(
+data class Guide private constructor(
     val title: String,
     val content: String,
     val image: String,
@@ -119,7 +119,7 @@ data class GuideItem private constructor(
         )
 
         fun getAll() = titles.map { title ->
-            GuideItem(title = title, content = contents[title]!!, image = images[title]!!)
+            Guide(title = title, content = contents[title]!!, image = images[title]!!)
         }
     }
 }

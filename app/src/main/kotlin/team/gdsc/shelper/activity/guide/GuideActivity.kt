@@ -13,8 +13,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import team.gdsc.shelper.R
-import team.gdsc.shelper.activity.guide.model.GuideItem
+import team.gdsc.shelper.activity.guide.model.Guide
 import team.gdsc.shelper.bindingadapter.ActivityGuideBinding
+import team.gdsc.shelper.databinding.ActivityGuideBinding
 
 class GuideActivity : AppCompatActivity() {
 
@@ -55,7 +56,7 @@ class GuideActivity : AppCompatActivity() {
         }
     }
 
-    private fun getFilteredItem(disasterName: String = "전체") = GuideItem.getAll().run {
+    private fun getFilteredItem(disasterName: String = "전체") = Guide.getAll().run {
         when (disasterName) {
             "전체" -> this
             else -> filter { it.title == disasterName }

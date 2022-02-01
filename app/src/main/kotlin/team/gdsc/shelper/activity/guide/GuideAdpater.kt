@@ -15,22 +15,22 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import team.gdsc.shelper.R
-import team.gdsc.shelper.activity.guide.model.GuideItem
-import team.gdsc.shelper.bindingadapter.LayoutGuideItemBinding
+import team.gdsc.shelper.activity.guide.model.Guide
+import team.gdsc.shelper.databinding.LayoutGuideItemBinding
 
-class GuideAdpater : RecyclerView.Adapter<GuideAdpater.ActionGuidelineHolder>() {
+class GuideAdpater : RecyclerView.Adapter<GuideAdpater.GuideViewHolder>() {
 
-    private var items = emptyList<GuideItem>()
+    private var items = emptyList<Guide>()
 
-    class ActionGuidelineHolder(private val binding: LayoutGuideItemBinding) :
+    class GuideViewHolder(private val binding: LayoutGuideItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(guide: GuideItem) {
+        fun bind(guide: Guide) {
             binding.guide = guide
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionGuidelineHolder {
-        return ActionGuidelineHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GuideViewHolder {
+        return GuideViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.layout_guide_item,
@@ -43,12 +43,12 @@ class GuideAdpater : RecyclerView.Adapter<GuideAdpater.ActionGuidelineHolder>() 
     override fun getItemId(position: Int) = position.toLong()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitItems(items: List<GuideItem>) {
+    fun submitItems(items: List<Guide>) {
         this.items = items
         notifyDataSetChanged()
     }
 
-    override fun onBindViewHolder(holder: ActionGuidelineHolder, position: Int) {
+    override fun onBindViewHolder(holder: GuideViewHolder, position: Int) {
         holder.bind(items[position])
     }
 

@@ -21,22 +21,21 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_user"
         style="?attr/materialCardViewElevatedStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
         app:cardElevation="5dp"
-        app:contentPadding="20dp"
-        tools:layout_height="wrap_content"
-        tools:layout_margin="100dp"
-        tools:layout_width="wrap_content"
+        app:contentPadding="16dp"
         tools:theme="@style/Theme.Shelper">
 
         <LinearLayout
             android:id="@+id/ll_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
@@ -55,7 +54,7 @@
                 android:paddingVertical="10dp"
                 android:text="@{user.name}"
                 android:textColor="@color/black"
-                tools:text="@tools:sample/lorem" />
+                tools:text="성빈" />
 
             <TextView
                 android:id="@+id/tv_action"
@@ -64,7 +63,7 @@
                 android:includeFontPadding="false"
                 android:text="@{user.action}"
                 android:textColor="@color/black"
-                tools:text="@tools:sample/lorem" />
+                tools:text="개발" />
 
             <TextView
                 android:id="@+id/tv_email"
@@ -74,7 +73,7 @@
                 android:paddingTop="10dp"
                 android:text="@{user.email}"
                 android:textColor="@color/black"
-                tools:text="@tools:sample/lorem" />
+                tools:text="ji@sungb.in" />
 
         </LinearLayout>
 

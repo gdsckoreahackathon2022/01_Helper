@@ -15,7 +15,7 @@
 
         <variable
             name="contact"
-            type="team.gdsc.shelper.activity.contact.model.ContactItem" />
+            type="team.gdsc.shelper.activity.contact.model.Contact" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

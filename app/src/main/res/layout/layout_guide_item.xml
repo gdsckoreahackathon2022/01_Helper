@@ -15,7 +15,7 @@
 
         <variable
             name="guide"
-            type="team.gdsc.shelper.activity.guide.model.GuideItem" />
+            type="team.gdsc.shelper.activity.guide.model.Guide" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
