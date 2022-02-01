@@ -11,11 +11,11 @@ package team.gdsc.shelper.activity.message.datasource
 
 import retrofit2.Response
 import retrofit2.http.Body
-import retrofit2.http.HTTP
+import retrofit2.http.POST
 import team.gdsc.shelper.activity.message.model.data.MessageRequestResponse
 import team.gdsc.shelper.activity.message.model.domain.MessageRequestBody
 
 interface MessageRequestApi {
-    @HTTP(method = "GET", path = "idsiSFK/sfk/cs/sua/web/DisasterSmsList.do", hasBody = true)
+    @POST("idsiSFK/sfk/cs/sua/web/DisasterSmsList.do")
     suspend fun request(@Body body: MessageRequestBody = MessageRequestBody()): Response<MessageRequestResponse>
 }
