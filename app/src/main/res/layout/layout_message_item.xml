@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:padding="10dp"
-        tools:layout_margin="30dp"
         tools:theme="@style/Theme.Shelper">
 
         <com.google.android.material.imageview.ShapeableImageView
