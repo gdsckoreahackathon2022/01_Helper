@@ -14,7 +14,7 @@
     <data>
 
         <variable
-            name="user"
+            name="item"
             type="team.gdsc.shelper.activity.information.model.User" />
     </data>
 
@@ -42,7 +42,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="@null"
-                app:srcAny="@{user.memoji}"
+                app:srcAny="@{item.memoji}"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:includeFontPadding="false"
-                android:text="@{user.name}"
+                android:text="@{item.name}"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:includeFontPadding="false"
-                android:text="@{user.action}"
+                android:text="@{item.action}"
                 android:textColor="@color/black"
                 android:textSize="13sp"
                 tools:text="개발" />
@@ -76,7 +76,7 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="@{user.email}"
+                android:text="@{item.email}"
                 android:textColor="@color/black"
                 android:textSize="8sp"
                 tools:ignore="SmallSp"
