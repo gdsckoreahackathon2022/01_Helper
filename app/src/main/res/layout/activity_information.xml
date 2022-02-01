@@ -80,7 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="10dp"
                 android:layout_marginStart="8dp"
-                android:alpha=".6f"
+                android:alpha="0.6"
                 android:background="@color/primaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_shelper"
@@ -172,7 +172,7 @@
                 android:layout_width="0dp"
                 android:layout_height="10dp"
                 android:layout_marginStart="8dp"
-                android:alpha=".6f"
+                android:alpha="0.6"
                 android:background="@color/primaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_about_us"
@@ -201,6 +201,7 @@
             android:gravity="center"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
+            tools:itemCount="4"
             tools:listitem="@layout/layout_user_item" />
 
     </LinearLayout>

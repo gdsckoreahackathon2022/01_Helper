@@ -13,7 +13,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import team.gdsc.shelper.R
-import team.gdsc.shelper.bindingadapter.ActivityContactBinding
+import team.gdsc.shelper.databinding.ActivityContactBinding
 
 class ContactActivity : AppCompatActivity() {
 

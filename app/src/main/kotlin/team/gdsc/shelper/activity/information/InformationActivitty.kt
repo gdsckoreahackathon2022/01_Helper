@@ -18,7 +18,7 @@ import team.gdsc.shelper.databinding.ActivityInformationBinding
 class InformationActivitty : AppCompatActivity() {
 
     private lateinit var binding: ActivityInformationBinding
-    private val contactAdpater by lazy { InformationAdapter() }
+    private val informationAdapter by lazy { InformationAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class InformationActivitty : AppCompatActivity() {
 
         binding.rvUser.apply {
             setHasFixedSize(true)
-            adapter = contactAdpater.apply {
+            adapter = informationAdapter.apply {
                 setHasStableIds(true)
             }
         }
