@@ -74,6 +74,7 @@
             android:id="@+id/rv_guide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:orientation="vertical"
             android:overScrollMode="never"
             android:padding="10dp"
