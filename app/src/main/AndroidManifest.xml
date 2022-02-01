@@ -27,7 +27,7 @@
 
         <activity
             android:name=".activity.error.ErrorActivity"
-            android:theme="@style/Theme.Shelper" />
+            android:theme="@style/Theme.Shelper.Error" />
 
         <activity
             android:name=".activity.guide.GuideActivity"

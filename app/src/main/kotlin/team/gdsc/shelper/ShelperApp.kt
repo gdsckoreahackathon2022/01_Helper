@@ -10,15 +10,20 @@
 package team.gdsc.shelper
 
 import android.app.Application
+import android.content.Intent
 import dagger.hilt.android.HiltAndroidApp
+import io.github.jisungbin.erratum.Erratum
+import io.github.jisungbin.erratum.ErratumExceptionActivity
 import io.github.jisungbin.logeukes.Logeukes
+import team.gdsc.shelper.activity.error.ErrorActivity
+import team.gdsc.shelper.util.constant.IntentConstant
 
 @HiltAndroidApp
 class ShelperApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        /*Erratum.setup(
+        Erratum.setup(
             application = this,
             registerExceptionActivityIntent = { _, throwable, lastActivity ->
                 Intent(lastActivity, ErrorActivity::class.java).apply {
@@ -30,7 +35,7 @@ class ShelperApp : Application() {
                     putExtra(IntentConstant.Error, IntentConstant.Exception)
                 }
             }
-        )*/
+        )
         if (BuildConfig.DEBUG) {
             Logeukes.setup()
         }

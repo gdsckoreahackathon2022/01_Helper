@@ -28,4 +28,13 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
+
+    <style name="Theme.Shelper.Error" parent="Theme.Shelper">
+        <item name="android:statusBarColor">@color/backgroundWhite</item>
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
+        <item name="android:windowBackground">@color/backgroundWhite</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
 </resources>
