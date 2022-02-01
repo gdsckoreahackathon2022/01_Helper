@@ -14,7 +14,7 @@ import androidx.databinding.DataBindingUtil
 import io.github.jisungbin.erratum.ErratumExceptionActivity
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
-import team.gdsc.shelper.bindingadapter.ActivityErrorBinding
+import team.gdsc.shelper.databinding.ActivityErrorBinding
 import team.gdsc.shelper.util.constant.IntentConstant
 
 class ErrorActivity : ErratumExceptionActivity() {

@@ -9,8 +9,7 @@
 
 package team.gdsc.shelper.activity.information.model
 
-@Suppress("DataClassPrivateConstructor")
-data class User private constructor(
+data class User(
     val name: String,
     val action: String,
     val email: String,

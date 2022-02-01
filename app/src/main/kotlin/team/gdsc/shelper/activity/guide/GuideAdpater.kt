@@ -20,7 +20,7 @@ import team.gdsc.shelper.databinding.LayoutGuideItemBinding
 
 class GuideAdpater : RecyclerView.Adapter<GuideAdpater.GuideViewHolder>() {
 
-    private var items = emptyList<Guide>()
+    private var guides = emptyList<Guide>()
 
     class GuideViewHolder(private val binding: LayoutGuideItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -44,13 +44,13 @@ class GuideAdpater : RecyclerView.Adapter<GuideAdpater.GuideViewHolder>() {
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitItems(items: List<Guide>) {
-        this.items = items
+        this.guides = items
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: GuideViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(guides[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = guides.size
 }

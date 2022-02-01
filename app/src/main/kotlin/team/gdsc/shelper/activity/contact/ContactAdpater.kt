@@ -19,7 +19,7 @@ import team.gdsc.shelper.databinding.LayoutContactItemBinding
 
 class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() {
 
-    private var items = Contact.getAll()
+    private var contacts = Contact.getAll()
 
     class ContactViewHolder(private val binding: LayoutContactItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -42,8 +42,8 @@ class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() 
     override fun getItemId(position: Int) = position.toLong()
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(contacts[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = contacts.size
 }

@@ -17,9 +17,9 @@ import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.information.model.User
 import team.gdsc.shelper.databinding.LayoutUserItemBinding
 
-class InformationAdapter : RecyclerView.Adapter<InformationAdapter.UserViewHolder>() {
+class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
-    private var items = User.getAll()
+    private var users = User.getAll()
 
     class UserViewHolder(private val binding: LayoutUserItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -42,8 +42,8 @@ class InformationAdapter : RecyclerView.Adapter<InformationAdapter.UserViewHolde
     override fun getItemId(position: Int) = position.toLong()
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(users[position])
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = users.size
 }
