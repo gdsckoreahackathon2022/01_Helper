@@ -26,6 +26,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.oss.licenses.OssLicensesActivity
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
@@ -121,6 +123,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding.tvMessage.setOnClickListener {
             startActivity(Intent(this, MessageActivity::class.java))
+        }
+
+        binding.tvOpensource.setOnClickListener {
+            startActivity(Intent(this, OssLicensesMenuActivity::class.java))
         }
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->
