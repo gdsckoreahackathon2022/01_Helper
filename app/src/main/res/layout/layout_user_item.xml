@@ -54,6 +54,7 @@
                 android:text="@{user.name}"
                 android:textColor="@color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:text="성빈" />
 
             <TextView
@@ -64,7 +65,7 @@
                 android:includeFontPadding="false"
                 android:text="@{user.action}"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 tools:text="개발" />
 
             <TextView
@@ -77,7 +78,7 @@
                 android:singleLine="true"
                 android:text="@{user.email}"
                 android:textColor="@color/black"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 tools:ignore="SmallSp"
                 tools:text="ji@sungb.in" />
 
