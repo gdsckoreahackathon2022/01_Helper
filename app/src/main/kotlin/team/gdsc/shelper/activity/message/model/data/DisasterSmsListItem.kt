@@ -43,7 +43,7 @@ data class DisasterSmsListItem(
     val dELETEAT: String? = null,
 
     @field:JsonProperty("MSG_CN")
-    val mSGCN: String? = null,
+    val msgCn: String? = null,
 
     @field:JsonProperty("RNUM")
     val rNUM: Int? = null,

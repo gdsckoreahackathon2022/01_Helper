@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class MessageRequestResponse(
     @field:JsonProperty("disasterSmsList")
-    val disasterSmsList: List<DisasterSmsListItem?>? = null,
+    val disasterSmsList: List<DisasterSmsListItem?> = emptyList(),
 
     @field:JsonProperty("rtnResult")
     val rtnResult: RtnResult? = null,

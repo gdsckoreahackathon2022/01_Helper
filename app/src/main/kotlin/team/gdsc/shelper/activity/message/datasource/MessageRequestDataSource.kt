@@ -10,11 +10,18 @@
 package team.gdsc.shelper.activity.message.datasource
 
 import dagger.hilt.android.scopes.ViewModelScoped
+import team.gdsc.shelper.util.extension.isValid
+import team.gdsc.shelper.util.extension.toException
 import javax.inject.Inject
 
 @ViewModelScoped
 class MessageRequestDataSource @Inject constructor(private val api: MessageRequestApi) {
-    suspend operator fun invoke() {
+    suspend operator fun invoke() = runCatching {
         val request = api.request()
+        if (request.isValid()) {
+            request.body()!!.disasterSmsList.map { message -> message?.msgCn }
+        } else {
+            throw request.toException()
+        }
     }
 }

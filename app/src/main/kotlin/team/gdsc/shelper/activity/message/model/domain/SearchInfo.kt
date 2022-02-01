@@ -9,9 +9,7 @@
 
 package team.gdsc.shelper.activity.message.model.domain
 
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import team.gdsc.shelper.util.Util
 
 data class SearchInfo(
     val pageUnit: String = "15",
@@ -19,9 +17,7 @@ data class SearchInfo(
     val pageIndex: String = "1",
     val firstIndex: String = "1",
     val lastIndex: String = "1",
-    val searchEndDe: String = getToday(),
+    val searchEndDe: String = Util.getToday(),
     val searchBgnDe: String = searchEndDe,
     val recordCountPerPage: String = pageUnit,
 )
-
-private fun getToday() = SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(Date())

@@ -11,6 +11,9 @@ package team.gdsc.shelper.util
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 object Util {
     fun getInterceptor(vararg interceptors: Interceptor): OkHttpClient {
@@ -18,4 +21,6 @@ object Util {
         for (interceptor in interceptors) builder.addInterceptor(interceptor)
         return builder.build()
     }
+
+    fun getToday() = SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(Date())
 }
