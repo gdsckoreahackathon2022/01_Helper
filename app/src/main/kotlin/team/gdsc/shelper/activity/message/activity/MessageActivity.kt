@@ -31,6 +31,10 @@ class MessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_message)
 
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
+
         vm.messageFlow.collectWithLifecycle(this, ::handleMessage)
         vm.exceptionFlow.collectWithLifecycle(this, ::handleException)
         vm.request()

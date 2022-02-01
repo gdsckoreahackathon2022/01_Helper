@@ -31,7 +31,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/primaryDark"
-            android:padding="10dp"
+            android:elevation="10dp"
+            app:contentPadding="10dp"
             app:shapeAppearance="@style/iv_circle"
             app:srcCompat="@drawable/ic_round_notifications_none_24"
             app:tint="@color/white" />

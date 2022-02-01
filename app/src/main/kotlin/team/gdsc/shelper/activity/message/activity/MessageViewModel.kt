@@ -45,6 +45,7 @@ class MessageViewModel @Inject constructor(
                     _exceptionFlow.emit(exception)
                 }
         } else {
+            logeukes { "emitting!" }
             _messageFlow.emit(DataStore.messages)
         }
     }
