@@ -26,15 +26,20 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.oss.licenses.OssLicensesActivity
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
+import team.gdsc.shelper.activity.contact.ContactActivity
 import team.gdsc.shelper.activity.error.ErrorActivity
 import team.gdsc.shelper.activity.guide.GuideActivity
+import team.gdsc.shelper.activity.information.InformationActivitty
 import team.gdsc.shelper.activity.map.constant.PlaceType
 import team.gdsc.shelper.activity.map.model.domain.PlaceFindResult
+import team.gdsc.shelper.activity.message.activity.MessageActivity
 import team.gdsc.shelper.databinding.ActivityMapBinding
 import team.gdsc.shelper.util.NetworkUtil
 import team.gdsc.shelper.util.constant.IntentConstant
@@ -100,8 +105,28 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.dlContainer.open()
         }
 
+        binding.ivClose.setOnClickListener {
+            binding.dlContainer.close()
+        }
+
         binding.tvGuide.setOnClickListener {
             startActivity(Intent(this, GuideActivity::class.java))
+        }
+
+        binding.tvContact.setOnClickListener {
+            startActivity(Intent(this, ContactActivity::class.java))
+        }
+
+        binding.tvInformation.setOnClickListener {
+            startActivity(Intent(this, InformationActivitty::class.java))
+        }
+
+        binding.tvMessage.setOnClickListener {
+            startActivity(Intent(this, MessageActivity::class.java))
+        }
+
+        binding.tvOpensource.setOnClickListener {
+            startActivity(Intent(this, OssLicensesMenuActivity::class.java))
         }
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->

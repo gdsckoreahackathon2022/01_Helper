@@ -26,11 +26,16 @@
         <item name="android:windowBackground">@color/backgroundWhite</item>
     </style>
 
+    <style name="Theme.Shelper.Error" parent="Theme.Shelper">
+        <item name="android:statusBarColor">@color/backgroundWhite</item>
+        <item name="android:navigationBarColor">@color/backgroundWhite</item>
+        <item name="android:windowBackground">@color/backgroundWhite</item>
+    </style>
+
     <style name="Theme.Shelper.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.Shelper</item>
-
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:navigationBarColor">@color/white</item>
     </style>
@@ -48,4 +53,10 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="iv_circle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

@@ -27,10 +27,22 @@
 
         <activity
             android:name=".activity.error.ErrorActivity"
-            android:theme="@style/Theme.Shelper" />
+            android:theme="@style/Theme.Shelper.Error" />
 
         <activity
             android:name=".activity.guide.GuideActivity"
+            android:theme="@style/Theme.Shelper.Guide" />
+
+        <activity
+            android:name=".activity.contact.ContactActivity"
+            android:theme="@style/Theme.Shelper.Guide" />
+
+        <activity
+            android:name=".activity.information.InformationActivitty"
+            android:theme="@style/Theme.Shelper.Guide" />
+
+        <activity
+            android:name=".activity.message.activity.MessageActivity"
             android:theme="@style/Theme.Shelper.Guide" />
 
         <activity

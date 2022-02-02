@@ -11,4 +11,5 @@ package team.gdsc.shelper.util.constant
 
 object Api {
     const val GoogleMap = "https://maps.googleapis.com/"
+    const val Message = "https://www.safekorea.go.kr/"
 }
