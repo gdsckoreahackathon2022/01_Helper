@@ -64,7 +64,8 @@
             android:id="@+id/nv_drawer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start">
+            android:layout_gravity="start"
+            android:backgroundTint="@color/backgroundWhite">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_container_drawer"
