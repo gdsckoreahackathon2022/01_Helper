@@ -11,17 +11,14 @@ package team.gdsc.shelper.activity.map.presentation
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
 import com.birjuvachhani.locus.Locus
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -33,7 +30,6 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
-import land.sungbin.systemuicontroller.setStatusBarColor
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.contact.ContactActivity
@@ -131,20 +127,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.tvOpensource.setOnClickListener {
             startActivity(Intent(this, OssLicensesMenuActivity::class.java))
         }
-
-        binding.dlContainer.addDrawerListener(object : DrawerLayout.DrawerListener {
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
-
-            override fun onDrawerStateChanged(newState: Int) {}
-
-            override fun onDrawerOpened(drawerView: View) {
-                setStatusBarColor(getColor(R.color.backgroundWhite), true)
-            }
-
-            override fun onDrawerClosed(drawerView: View) {
-                setStatusBarColor(Color.TRANSPARENT, true)
-            }
-        })
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->
             if (::map.isInitialized) {
