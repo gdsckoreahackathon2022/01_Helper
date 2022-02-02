@@ -38,7 +38,7 @@
 
     <string name="activity_guide_chip_all">전체</string>
     <string name="activity_guide_chip_flood">홍수</string>
-    <string name="activity_guide_heavy_rain">홍수</string>
+    <string name="activity_guide_heavy_rain">호우</string>
     <string name="activity_guide_chip_tsunami">쓰나미</string>
     <string name="activity_guide_chip_typhoon">태풍</string>
     <string name="activity_guide_chip_volcano">화산</string>
