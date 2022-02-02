@@ -1,16 +1,16 @@
 /*
- * Shelper © 2022 Team Helper. all rights reserved.
- * Shelper license is under the MIT.
- *
- * [Dependencies.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:56
- *
- * Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
- */
+* Shelper © 2022 Team Helper. all rights reserved.
+* Shelper license is under the MIT.
+*
+* [Dependencies.kt] created by Ji Sungbin on 22. 1. 30. 오후 3:56
+*
+* Please see: https://github.com/gdsckoreahackathon2022/01_Helper/blob/main/LICENSE.
+*/
 
 import org.gradle.api.JavaVersion
 
 object Application {
-    const val minSdk = 21
+    const val minSdk = 23
     const val targetSdk = 31
     const val compileSdk = 31
     const val jvmTarget = "11"
