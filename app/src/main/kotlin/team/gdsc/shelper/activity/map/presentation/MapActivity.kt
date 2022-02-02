@@ -11,6 +11,7 @@ package team.gdsc.shelper.activity.map.presentation
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -32,6 +33,7 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
+import land.sungbin.systemuicontroller.setStatusBarColor
 import team.gdsc.shelper.BuildConfig
 import team.gdsc.shelper.R
 import team.gdsc.shelper.activity.contact.ContactActivity
@@ -136,11 +138,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onDrawerStateChanged(newState: Int) {}
 
             override fun onDrawerOpened(drawerView: View) {
-                TODO("Not yet implemented")
+                setStatusBarColor(Color.WHITE)
             }
 
             override fun onDrawerClosed(drawerView: View) {
-                TODO("Not yet implemented")
+                setStatusBarColor(Color.TRANSPARENT)
             }
         })
 
