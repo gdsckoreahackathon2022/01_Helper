@@ -138,11 +138,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onDrawerStateChanged(newState: Int) {}
 
             override fun onDrawerOpened(drawerView: View) {
-                setStatusBarColor(Color.WHITE)
+                setStatusBarColor(getColor(R.color.backgroundWhite), true)
             }
 
             override fun onDrawerClosed(drawerView: View) {
-                setStatusBarColor(Color.TRANSPARENT)
+                setStatusBarColor(Color.TRANSPARENT, true)
             }
         })
 
