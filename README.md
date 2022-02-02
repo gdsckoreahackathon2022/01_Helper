@@ -2,9 +2,4 @@
 
 
 <h1 align="center">Shelper</h1>
-
----
-
-### 다운로드
-
-[release](https://github.com/gdsckoreahackathon2022/01_Helper/releases/download/1.0.0/app-release.apk)
+<h3 align="center"><a href="https://github.com/gdsckoreahackathon2022/01_Helper/releases/tag/1.0.1">[다운로드]</a></h3>
