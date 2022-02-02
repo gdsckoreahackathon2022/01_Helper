@@ -66,6 +66,7 @@ dependencies {
     Dependencies.Jackson.forEach(::implementation)
     Dependencies.Location.forEach(::implementation)
     Dependencies.Retrofit.forEach(::implementation)
+    implementation("land.sungbin:systemuicontroller:1.0.0")
 
     Dependencies.Debug.forEach(::debugImplementation)
 

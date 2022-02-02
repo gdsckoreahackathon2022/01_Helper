@@ -13,12 +13,14 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import com.birjuvachhani.locus.Locus
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -26,7 +28,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.oss.licenses.OssLicensesActivity
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.jisungbin.logeukes.LoggerType
@@ -128,6 +129,20 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.tvOpensource.setOnClickListener {
             startActivity(Intent(this, OssLicensesMenuActivity::class.java))
         }
+
+        binding.dlContainer.addDrawerListener(object : DrawerLayout.DrawerListener {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
+
+            override fun onDrawerStateChanged(newState: Int) {}
+
+            override fun onDrawerOpened(drawerView: View) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDrawerClosed(drawerView: View) {
+                TODO("Not yet implemented")
+            }
+        })
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->
             if (::map.isInitialized) {
