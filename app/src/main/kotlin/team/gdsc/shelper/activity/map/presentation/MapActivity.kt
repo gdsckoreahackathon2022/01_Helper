@@ -157,6 +157,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     map.uiSettings.isMyLocationButtonEnabled = true
                     moveCameraAndZoom(lastLocate)
                     vm.findPlace(type = PlaceType.FLOOD_DAMAGE, locate = lastLocate)
+                    Locus.stopLocationUpdates()
                 }
             }
             result.error?.let { exception ->
@@ -219,10 +220,5 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         } else {
             super.onBackPressed()
         }
-    }
-
-    override fun onPause() {
-        Locus.stopLocationUpdates()
-        super.onPause()
     }
 }

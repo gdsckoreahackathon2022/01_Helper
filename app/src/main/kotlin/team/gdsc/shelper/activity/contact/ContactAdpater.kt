@@ -9,6 +9,8 @@
 
 package team.gdsc.shelper.activity.contact
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -25,6 +27,10 @@ class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() 
         RecyclerView.ViewHolder(binding.root) {
         fun bind(contact: Contact) {
             binding.contact = contact
+            binding.cvContact.setOnClickListener {
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${contact.name}"))
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
