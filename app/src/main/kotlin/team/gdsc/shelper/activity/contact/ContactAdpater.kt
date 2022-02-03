@@ -28,7 +28,7 @@ class ContactAdpater : RecyclerView.Adapter<ContactAdpater.ContactViewHolder>() 
         fun bind(contact: Contact) {
             binding.contact = contact
             binding.cvContact.setOnClickListener {
-                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${contact.name}"))
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${contact.number}"))
                 binding.root.context.startActivity(intent)
             }
         }
