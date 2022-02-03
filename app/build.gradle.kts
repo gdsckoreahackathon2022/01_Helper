@@ -26,13 +26,14 @@ android {
         versionCode = Application.versionCode
         versionName = Application.versionName
         multiDexEnabled = true
+        // signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
         release {
             isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 

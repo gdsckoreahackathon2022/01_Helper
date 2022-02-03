@@ -42,6 +42,7 @@ class MapViewModel @Inject constructor(
                     _locateFlow.emit(response)
                 }
                 .onFailure { exception ->
+                    println(exception)
                     _exceptionFlow.emit(exception)
                 }
         } else {

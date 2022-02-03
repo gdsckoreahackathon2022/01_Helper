@@ -14,8 +14,8 @@ object Application {
     const val targetSdk = 31
     const val compileSdk = 31
     const val jvmTarget = "11"
-    const val versionCode = 3
-    const val versionName = "1.0.1"
+    const val versionCode = 5
+    const val versionName = "1.1.1-hotfix"
 
     val targetCompat = JavaVersion.VERSION_11
     val sourceCompat = JavaVersion.VERSION_11

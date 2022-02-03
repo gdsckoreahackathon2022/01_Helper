@@ -71,6 +71,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
+        toast("우어어어어")
         toast(getString(R.string.activity_map_loading_locate))
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
@@ -129,7 +130,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         binding.bnvNavigation.setOnItemSelectedListener { menu ->
-            if (::map.isInitialized) {
+            if (::map.isInitialized && initLocateService) {
                 val placeType = when (menu.itemId) {
                     R.id.navigatin_flood_damage -> PlaceType.FLOOD_DAMAGE
                     R.id.navigation_volcano -> PlaceType.VOLCANO
@@ -140,7 +141,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 map.clear()
                 vm.findPlace(placeType, lastLocate)
             }
-            true
+            initLocateService
         }
 
         binding.bnvNavigation.setOnItemReselectedListener {}
@@ -150,8 +151,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun startLocationService() {
         Locus.startLocationUpdates(this) { result ->
             result.location?.let { location ->
-                lastLocate = LatLng(location.latitude, location.longitude)
                 if (!initLocateService) {
+                    lastLocate = LatLng(location.latitude, location.longitude)
                     initLocateService = true
                     map.isMyLocationEnabled = true
                     map.uiSettings.isMyLocationButtonEnabled = true
@@ -189,6 +190,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             true -> throwable.message.toString()
             else -> getString(R.string.activity_map_toast_occur_exception)
         }
+        // logeukes { throwable }
         toast(message)
     }
 
