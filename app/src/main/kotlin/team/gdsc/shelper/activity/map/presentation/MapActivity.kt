@@ -71,7 +71,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
-        toast("우어어어어")
+        // toast("우어어어어")
         toast(getString(R.string.activity_map_loading_locate))
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
