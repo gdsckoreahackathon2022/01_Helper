@@ -8,7 +8,11 @@
 
 ---
 
-### 발표 대본
+### PPT 자료
+
+[[다운로드]](https://github.com/gdsckoreahackathon2022/01_Helper/raw/main/art/Shelper.pptx)
+
+### 발표 대본 [[다운로드]](https://github.com/gdsckoreahackathon2022/01_Helper/raw/main/art/script.docx)
 
 안녕하세요. GDSC 코리아 해커톤에 첫 타자로 참여하게 된 팀 헬퍼입니다. 저희 팀이 선정한 UN 지속가능발전 목표 중 한 가지는 ‘기후 변화 대응’입니다. 
 
